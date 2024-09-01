@@ -1,0 +1,1 @@
+# Scoala_de_arte_Criuleni

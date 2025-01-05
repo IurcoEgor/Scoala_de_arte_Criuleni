@@ -48,14 +48,14 @@ header {
     z-index: 1;
 }
 
-navbar {
+nav {
     margin-left: 75px;
     margin-bottom: 13px;
     display: inline-block;
     overflow: auto;
 }
 
-navbar a {
+nav a {
     margin-right: 25px;
     color: white;
     font-size: 23px;
@@ -63,7 +63,7 @@ navbar a {
     font-family: 'Poppins', 'Arial', 'Helvetica', sans-serif;
 }
 
-navbar a:hover {
+nav a:hover {
     color: #ffcf91;
     text-decoration: underline 1px;
 }

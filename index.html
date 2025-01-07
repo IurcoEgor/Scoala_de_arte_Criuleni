@@ -5,24 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://kit.fontawesome.com/06ac0fa886.js" crossorigin="anonymous"></script>
+    
     <title>Școala de Arte Criuleni</title>
 </head>
 
 <body>
 
-    <header>
+    <header class="header-hamburger">
         <a href="index.html" style="text-decoration: none;">
             <img class="logo" src="images/logo.png">
         </a>
 
-        <nav>
+        <button class="hamburger-menu" aria-label="Toggle navigation">
+            &#9776;
+        </button>
+
+        <nav class="nav-links">
             <a href="index.html">Despre noi</a>
             <a href="pages/specializari.html">Specializări</a>
-            <a href="pages/extracuricul.html">Activitatea extracuriculară</a>
-            <a href="pages/contacte.html">Informații și Contacte</a>
+            <a href="pages/extracuricul.html">Extracuricul</a>
+            <a href="pages/contacte.html">Info & Contacte</a>
         </nav>
 
     </header>
@@ -30,7 +39,7 @@
     <div class="page-container">
         <aside id="side-menu">
             <a href="#istoric">Scurt istoric</a>
-            <a href="#viziunea">Viziunea managerială & <br> Misiunea Școlii</a>
+            <a href="#viziunea">Viziunea & Misiunea Școli</a>
             <a href="#cadre">Cadre Didactice</a>
             <a href="#mandria">Mândria școlii</a>
         </aside>

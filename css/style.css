@@ -29,16 +29,22 @@ body {
 }
 
 .page-container {
+    background: linear-gradient(to bottom, rgba(210, 210, 210, 0.825), rgba(208, 208, 208, 0.870)), url('../images/scoala-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 30% 70%;
     min-height: 100vh;
-    padding-top: 80px;
+    padding: 80px 0px;
 }
 
 main {
-    margin: 10px 10% 100px 220px;
+    margin: 10px 10% 100px 225px;
     padding: 0px 25px;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
     height: 80px;
     background: #7aaca6;
     position: fixed;
@@ -49,14 +55,12 @@ header {
 }
 
 nav {
-    margin-left: 75px;
-    margin-bottom: 13px;
-    display: inline-block;
+    margin-left: 20px;
     overflow: auto;
 }
 
 nav a {
-    margin-right: 25px;
+    margin-right: 2%;
     color: white;
     font-size: 23px;
     text-decoration: none;
@@ -67,6 +71,84 @@ nav a:hover {
     color: #ffcf91;
     text-decoration: underline 1px;
 }
+
+/* Hamburger menu */
+
+.header-hamburger {
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 20px;
+}
+
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/*  */
+
+/* Link acasă */
+
+.acasa-link {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 8%;
+    gap: 20px;
+}
+
+.nav-home {
+    display: none;
+    position: absolute;
+    flex-grow: 1;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    flex-direction: row;
+    top: 10px;
+    right: 62px;
+    background: none;
+    padding: 10px;
+    height: 65px;
+    width: 60%;
+}
+
+.nav-home a {
+    display: block;
+    margin-right: 0;
+}
+
+.nav-home.show {
+    display: flex;
+}
+
+.home-menu {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    top: 20px;
+    right: 20px;
+}
+
+/*  */
 
 aside {
     font-family: 'Quicksand', 'Arial', 'Helvetica', sans-serif;
@@ -97,12 +179,17 @@ aside a:hover {
 }
 
 footer {
+    font-size: 21px;
     background: #7aaca6;
     min-height: 80px;
     text-align: center;
-    padding-top: 35px;
+    padding-top: 30px;
     color: white;
     width: 100%;
+}
+
+footer span:first-of-type::before {
+    content: "© ";
 }
 
 hr {
@@ -289,12 +376,19 @@ td {
     height: 100%;
 }
 
-.taxa-list-20px {
-    margin-left: 20px;
+.taxa-list {
+    margin-left: 5px;
+    border-left: 2px solid black;
 }
 
-.taxa-list-64px {
-    margin-left: 64px;
+.taxa-list-22px {
+    margin-left: 22px;
+    border-left: 2px solid black;
+}
+
+.taxa-list-63px {
+    margin-left: 63px;
+    border-left: 2px solid black;
 }
 
 .facebook-link {
@@ -350,8 +444,8 @@ td {
 
 .loupe {
     position: absolute;
-    margin-top: 272px;
-    margin-left: 212px;
+    margin-top: 282px;
+    margin-left: 230px;
     width: 1.5%;
 }
 
@@ -368,4 +462,38 @@ td {
     height: 80px;
     transition: all linear 1s;
     width: auto;
+}
+
+@media screen and (max-width: 920px) {
+
+    /* Hamburger Menu */
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #7aaca6;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 210px;
+    }
+
+    .nav-links a {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    /*  */
 }

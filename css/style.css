@@ -484,6 +484,10 @@ td {
 
 @media screen and (max-width: 920px) {
 
+    nav hr {
+        display: block;
+    }
+
     /* Hamburger Menu */
 
     .hamburger-menu {

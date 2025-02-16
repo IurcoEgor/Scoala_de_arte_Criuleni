@@ -2,22 +2,6 @@
 var data = new Date();
 document.getElementById('an').innerHTML = data.getFullYear();
 
-//  Defilarea
-document.querySelectorAll('aside a').forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            const { offsetTop } = targetElement;
-            window.scrollTo({
-                top: offsetTop - 78,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
 //  Meniu mobil
 const hamburgerMenu = document.querySelector('.hamburger-menu');
 if (hamburgerMenu) {
@@ -26,16 +10,34 @@ if (hamburgerMenu) {
     });
 }
 
-//Acasa
-const homeMenu = document.querySelector('.home-menu');
-const navHome = document.querySelector('.nav-home');
+// Formular
 
-if (homeMenu && navHome) {
-    const showMenu = () => navHome.classList.add('show');
-    const hideMenu = () => navHome.classList.remove('show');
+document.addEventListener('DOMContentLoaded', function () {
+    const inputs = document.querySelectorAll('#nume-elev, #prenume-elev, #nume-parinte, #prenume-parinte, #localitate');
 
-    homeMenu.addEventListener('mouseover', showMenu);
-    homeMenu.addEventListener('mouseout', hideMenu);
-    navHome.addEventListener('mouseover', showMenu);
-    navHome.addEventListener('mouseout', hideMenu);
-}
+    inputs.forEach(input => {
+        input.addEventListener('blur', function () {
+            this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
+        });
+    });
+});
+
+// Denumirea paginii
+
+document.addEventListener("DOMContentLoaded", function () {
+    const span = document.getElementById("page-name");
+    const pageTitles = {
+        "index": "Homepage",
+        "despre": "Despre Noi",
+        "istoricul": "Despre Noi - Istoric",
+        "specializari": "Specializări",
+        "extracuricul": "Activități",
+        "contacte": "Info & Contacte",
+        "artmartisor": "Activități - Proiect Educațional Internațional ArtMărțișor"
+    };
+    const pageTitle = pageTitles[window.location.pathname.split('/').pop().split('.')[0]] || "Pagina Necunoscută";
+
+    if (span) {
+        span.textContent = pageTitle;
+    }
+});

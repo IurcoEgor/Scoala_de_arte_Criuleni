@@ -135,8 +135,8 @@
 
         <div class="content">
 
-            <h1 class="centered"> <span class="fon">Informații Utile</span></h1>
-            <hr id="taxe" class="hr-head"> <br>
+            <h1 class="top-name">Contacte</h1>
+            <!-- <hr id="taxe">
 
             <section>
                 <h2 class="h2-left">Taxe de studii</h2>
@@ -157,9 +157,9 @@
                     <li><b>Coregrafie</b> <span class="taxa-list-22px">} - 290 lei</span></li>
                     <li><b>Teatru</b> <span class="taxa-list-63px"></span></li>
                 </ul>
-            </section> <br id="admitere">
+            </section>
 
-            <hr> <br>
+            <hr id="admitere">
 
             <section>
                 <h2 class="h2-left">Admitere</h2>
@@ -169,31 +169,87 @@
                     studii copii și tineri cu vârsta de la 5 până la 14 ani, în dependență de specialitatea solicitată
                     și în conformitate cu planul de studii stipulat de Ministerul Educației.
                 </p>
-            </section> <br id="contacte">
+            </section> -->
 
-            <hr> <br>
+            <hr id="contacte">
 
-            <section>
-                <h2 class="h2-left">Contacte</h2>
-                <br> <br>
-                <div class="contacte">
-                    <b>Număr de contact:</b> 0248 21 846
-                    <br> <br>
-                    <b>Email:</b> scoaladeartecriuleni@gmail.com
-                    <br> <br>
-                    <b>Adresa:</b> str. 31 August 104, Criuleni, Moldova
-                    <br> <br>
-                    <b>Facebook:</b>
-                    <a class="facebook-link" target="_blank"
-                        href="https://www.facebook.com/ScoaladeArteCR/?locale=ro_RO">
-                        Școala de Arte Criuleni
-                    </a>
-                </div>
-                <div>
+            <section class="container">
+                <!-- <div>
                     <iframe class="harta"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1611.5062311275778!2d29.16172531498751!3d47.21228480563123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c95d6f714170d7%3A0x621352395fb1e057!2zyJhjb2FsxIMgZGUgQXJ0ZQ!5e0!3m2!1sru!2s!4v1720615513377!5m2!1sru!2s"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> -->
+
+                <div class="form">
+                    <div class="contact-info">
+                        <h3 class="title">Hai să luăm legătură!</h3>
+                        <p class="text">
+                            Dacă aveți întrebări sau doriți să aflați mai multe informații
+                            despre noi, nu ezitați să ne contactați.
+                        </p>
+
+                        <div class="info">
+                            <div class="information">
+                                <i class="fa-solid fa-location-dot" id="icon"></i>
+                                <p>str. 31 August, 104, or. Criuleni</p>
+                            </div>
+                            <div class="information">
+                                <i class="fa-solid fa-envelope" id="icon"></i>
+                                <p>scoaladeartecriuleni@gmail.com</p>
+                            </div>
+                            <div class="information">
+                                <i class="fa-solid fa-phone" id="icon"></i>
+                                <p>0248 21 846</p>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <p>Găsește-ne și aici:</p>
+                            <div class="social-icons">
+                                <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2"
+                                    target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q"
+                                    target="_blank">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <span class="circle one"></span>
+                        <span class="circle two"></span>
+
+                        <form method="POST">
+                            <h3 class="title">Contactează-ne</h3>
+                            <div class="input-container">
+                                <input id="nume" type="text" name="name" class="input" placeholder="Nume"
+                                    pattern="[A-Z][a-zA-Z]{2,}( [A-Z][a-zA-Z]{2,})?"
+                                    title="Numele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere"
+                                    required>
+                            </div>
+                            <div class="input-container">
+                                <input type="email" name="email" class="input" placeholder="E-mail" required>
+                            </div>
+                            <div class="input-container">
+                                <input type="tel" name="phone" class="input" placeholder="Număr de telefon"
+                                    pattern="(\+373|0)\s?\d{2}\s?\d{3}\s?\d{3}"
+                                    title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required>
+                            </div>
+                            <div class="input-container textarea">
+                                <textarea name="message" class="input" placeholder="Întrebări" maxlength="300" required
+                                    oninput="checkLength(this)"></textarea>
+                                <small id="charCount">0/300 caractere</small>
+                            </div>
+                            <input type="submit" value="Trimite" class="btn">
+                        </form>
+                    </div>
                 </div>
+
             </section>
 
         </div>

@@ -1,26 +1,31 @@
+
 // Data
 var data = new Date();
 document.getElementById('an').innerHTML = data.getFullYear();
 
-//  Meniu mobil
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-if (hamburgerMenu) {
-    hamburgerMenu.addEventListener('click', () => {
-        document.querySelector('.nav-links').classList.toggle('show');
-    });
-}
-
 // Formular
 
 document.addEventListener('DOMContentLoaded', function () {
-    const inputs = document.querySelectorAll('#nume-elev, #prenume-elev, #nume-parinte, #prenume-parinte, #localitate');
+    const inputs = document.querySelectorAll('#nume-prenume-elev, #nume-prenume-parinte, #localitate, #nume');
 
     inputs.forEach(input => {
         input.addEventListener('blur', function () {
-            this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1).toLowerCase();
+            this.value = this.value.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
         });
     });
 });
+
+function checkLength(el) {
+    const maxLength = 300;
+    const currentLength = el.value.length;
+    const charCount = document.getElementById('charCount');
+    charCount.textContent = `${currentLength}/${maxLength} caractere`;
+    if (currentLength >= maxLength) {
+        charCount.style.color = 'red';
+    } else {
+        charCount.style.color = 'black';
+    }
+}
 
 // Denumirea paginii
 
@@ -41,3 +46,28 @@ document.addEventListener("DOMContentLoaded", function () {
         span.textContent = pageTitle;
     }
 });
+
+// Accordion
+
+const accordion = document.querySelector(".accordion");
+accordion.addEventListener("click", (e) => {
+    const activePanel = e.target.closest(".accordion-panel");
+    if (!activePanel) return;
+    toggleAccordion(activePanel);
+})
+
+function toggleAccordion(panelToActivate) {
+    const buttons = panelToActivate.parentElement.querySelectorAll('button');
+    const contents = panelToActivate.parentElement.querySelectorAll('.accordion-content');
+
+    buttons.forEach((button) => {
+        button.setAttribute('aria-expanded', false)
+    });
+
+    contents.forEach((contents) => {
+        contents.setAttribute('aria-hidden', true)
+    });
+
+    panelToActivate.querySelector('button').setAttribute('aria-expanded', true);
+    panelToActivate.querySelector('.accordion-content').setAttribute('aria-hidden', false);
+}

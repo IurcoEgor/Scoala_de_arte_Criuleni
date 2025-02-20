@@ -19,12 +19,6 @@ html {
     border-radius: 5px;
 }
 
-aside::-webkit-scrollbar-thumb {
-    background: gray;
-    border-radius: 5px;
-    display: none;
-}
-
 ::-webkit-scrollbar-thumb:hover {
     display: block;
 }

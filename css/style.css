@@ -1105,6 +1105,23 @@ textarea::placeholder {
     border-radius: 23px;
 }
 
+.admitere {
+    color: rgb(92, 93, 93);
+    display: flex;
+    justify-content: center;
+}
+
+.admitere p {
+    width: 88%;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.admitere p:before {
+    content: "*";
+}
+
 /*  */
 
 .container-parteneri {

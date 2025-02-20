@@ -1064,6 +1064,7 @@ textarea.input {
     min-height: 150px;
     border-radius: 22px;
     resize: none;
+    font-family: 'Nunito', 'Arial', 'Helvetica', sans-serif;
 }
 
 form .btn {

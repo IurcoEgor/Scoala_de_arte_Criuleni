@@ -23,10 +23,10 @@ if (contactForm) {
     e.preventDefault();
 
     addDoc(collection(db, 'contact'), {
-      name: contactForm.name.value,
-      email: contactForm.email.value,
-      phone: contactForm.phone.value,
-      message: contactForm.message.value,
+      Nume: contactForm.name.value,
+      Email: contactForm.email.value,
+      Telefon: contactForm.phone.value,
+      Mesajul: contactForm.message.value,
     }).then(() => {
       alert('Mesajul a fost trimis cu succes!');
       contactForm.reset();

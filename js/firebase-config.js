@@ -1,9 +1,9 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyDkLId9RhXjPqL3tb6mX1ZC3BXhfeUkCk0",
-  authDomain: "scoala-de-arte-criuleni.firebaseapp.com",
-  projectId: "scoala-de-arte-criuleni",
-  storageBucket: "scoala-de-arte-criuleni.firebasestorage.app",
-  messagingSenderId: "55607629161",
-  appId: "1:55607629161:web:b981b3f0d293fa251c19f8",
-  measurementId: "G-243PZJ5L6Y"
+  apiKey: "REPLACE_FIREBASE_API_KEY",
+  authDomain: "REPLACE_FIREBASE_AUTH_DOMAIN",
+  projectId: "REPLACE_FIREBASE_PROJECT_ID",
+  storageBucket: "REPLACE_FIREBASE_STORAGE_BUCKET",
+  messagingSenderId: "REPLACE_FIREBASE_MESSAGING_SENDER_ID",
+  appId: "REPLACE_FIREBASE_APP_ID",
+  measurementId: "REPLACE_FIREBASE_MEASUREMENT_ID"
 };

@@ -221,7 +221,6 @@ header {
     width: 100%;
     text-align: center;
     font-weight: 500;
-    text-decoration: none;
     z-index: 101;
 }
 
@@ -229,10 +228,8 @@ header {
     line-height: 75px;
     font-size: 1.5em;
     text-align: center;
-    justify-content: center;
     transition: 0.5s;
     color: rgb(34 35 39);
-    z-index: 101;
 }
 
 .navMenu ul li.active a i {
@@ -258,8 +255,6 @@ header {
 .indicator {
     position: absolute;
     bottom: 35px;
-    width: 70px;
-    height: 70px;
     background: #8fa9fd;
     border-radius: 50%;
     transition: 0.2s;
@@ -607,7 +602,6 @@ footer {
 
 .footer-info-content a:hover span {
     background-color: rgb(111, 111, 111);
-    /* background-color: rgb(68, 71, 76); */
     color: rgb(239, 243, 255);
 }
 
@@ -2330,8 +2324,8 @@ td {
     }
 
     #scrollTopBtn {
-        width: 41px;
-        height: 41px;
+        width: 42px;
+        height: 42px;
         font-size: 1.25rem;
     }
 
@@ -2478,6 +2472,13 @@ td {
     }
 
     /*  */
+
+    #scrollTopBtn {
+        width: 40px;
+        height: 40px;
+        right: 2px;
+        bottom: 100px;
+    }
 }
 
 @media screen and (max-width: 720px) {

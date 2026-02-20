@@ -40,19 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateIndicator() {
         const activeItem = document.querySelector(".navMenu ul li.active");
         if (activeItem && navList) {
-            const icon = activeItem.querySelector(".icon i");
-            const navRect = navList.getBoundingClientRect();
             const activeItemRect = activeItem.getBoundingClientRect();
-            const iconRect = icon ? icon.getBoundingClientRect() : { left: 0, width: 0 };
-            const iconCenter = iconRect.left - navRect.left + iconRect.width / 2;
             const navListWidth = navList.offsetWidth;
             const navListHeight = navList.offsetHeight;
             const indicatorSize = Math.min(navListWidth, navListHeight);
             indicator.style.width = `${indicatorSize}px`;
             indicator.style.height = `${indicatorSize}px`;
-            indicator.style.borderRadius = "50%";
-            indicator.style.left = `${activeItemRect.left + (activeItemRect.width / 2) - (indicator.offsetWidth / 2)}px`;
-            indicator.style.bottom = `35px`;
+            indicator.style.left = `${activeItemRect.left + (activeItemRect.width / 2) - (indicatorSize / 2)}px`;
         }
     }
     updateIndicator();

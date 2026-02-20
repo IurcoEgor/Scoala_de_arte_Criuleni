@@ -7,6 +7,9 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://kit.fontawesome.com/06ac0fa886.js" crossorigin="anonymous"></script>
 
@@ -14,6 +17,10 @@
 </head>
 
 <body>
+
+    <button id="scrollTopBtn" title="Sus">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <nav class="navMenu">
         <ul>
@@ -42,7 +49,7 @@
                 </a>
             </li>
             <li class="navList">
-                <a href="pages/extracuricul.html">
+                <a href="pages/activitati.html">
                     <span class="icon">
                         <i class="fa-solid fa-chart-simple"></i>
                     </span>
@@ -64,7 +71,7 @@
     <header>
         <div class="main-header">
             <a href="index.html">
-                <img class="logo" src="images/logo.png">
+                <img class="logo" src="images/logo.png" alt="Logo Școala de Arte Criuleni">
             </a>
 
             <nav class="nav-links">
@@ -87,25 +94,17 @@
                             <div>
                                 <a href="pages/specializari.html#muzica">Muzica</a>
                                 <a href="pages/specializari.html#creatie">Creație</a>
-                                <a href="pages/specializari.html#formular">Formular de înscriere</a>
                                 <a href="pages/specializari.html#preturi">Prețuri</a>
+                                <a href="pages/specializari.html#formular">Formular de înscriere</a>
                             </div>
                         </div>
 
                         <div class="dropdown-element">
                             <h5>Activități</h5>
                             <div>
-                                <h6><a href="">2025</a></h6>
-                                <div class="expander">
-                                    <a href="pages/extracuricul.html"></a>
-                                    <a href="pages/extracuricul.html"></a>
-                                    <a href="pages/extracuricul.html"></a>
-                                </div>
+                                <a href="pages/activitati.html">Prima pagină</a>
                                 <hr>
-                                <h6><a href="pages/extracuricul.html#2024">2024</a></h6>
-                                <div class="expander">
-                                    <a href="pages/extracuricul.html"></a>
-                                </div>
+                                <a href="pages/activitati2.html">Ultima pagină</a>
                             </div>
                         </div>
                     </div>
@@ -126,25 +125,17 @@
                     <div class="dropdown-content">
                         <a href="pages/specializari.html#muzica">Muzica</a>
                         <a href="pages/specializari.html#creatie">Creație</a>
+                        <a href="pages/specializari.html#preturi">Prețuri</a>
                         <a href="pages/specializari.html#formular">Formular de înscriere</a>
-                        <a href="specializari.html#preturi">Prețuri</a>
                     </div>
                 </div>
 
                 <div class="dropdown">
-                    <a href="pages/extracuricul.html">Activități</a>
+                    <a href="pages/activitati.html">Activități</a>
                     <div class="dropdown-content">
-                        <h6><a href="">2025</a></h6>
-                        <div class="expander">
-                            <a href="pages/extracuricul.html"></a>
-                            <a href="pages/extracuricul.html"></a>
-                            <a href="pages/extracuricul.html"></a>
-                        </div>
+                        <a href="pages/activitati.html">Prima pagină</a>
                         <hr>
-                        <h6><a href="pages/extracuricul.html#2024">2024</a></h6>
-                        <div class="expander">
-                            <a href="pages/extracuricul.html"></a>
-                        </div>
+                        <a href="pages/activitati2.html">Ultima pagină</a>
                     </div>
                 </div>
 
@@ -154,6 +145,8 @@
             </button>
         </div>
     </header>
+
+
 
     <main id="start">
         <div class="content" id="intro">
@@ -167,66 +160,162 @@
                 </div>
             </section>
         </div>
+        <section class="index-sec">
+            <div class="specializari-container">
+                <div class="specializari-intro">
+                    <h1 class="b-sec-h1">Descoperă-ți și tu talentul artistic alături de noi</h1>
+                    <p class="b-sec-p">Anual sute de elevi din oraș și raion studiază și cultivă magia artei, fiecare an
+                        zeci primind diploma de absolvire</p>
+                    <a class="b-sec-btn" href="pages/specializari.html#formular">Înscrie-te acum!</a>
+                </div>
+                <div class="specializari-grid">
+                    <a class="specializare muzica" href="pages/specializari.html#muzica">
+                        <div class="spec-content">
+                            <h2>Muzică</h2>
+                            <p>Studiul instrumentelor, canto și teoria muzicii pentru toate vârstele.</p>
+                        </div>
+                    </a>
+                    <a class="specializare creatie" href="pages/specializari.html#creatie">
+                        <div class="spec-content">
+                            <h2>Creație</h2>
+                            <p>Dans, pictură, desen, arte decorative și dezvoltarea imaginației vizuale.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="index-sec">
+            <div class="stiri-container">
+                <h1 class="stiri-h1">Activități și Anunțuri</h1>
+                <div class="news-section" style="justify-content: center;">
+                    <div class="news-card">
+                        <a href="link-pages/usile-deschise24.html">
+                            <img src="images/news-img/usi-dechise24.jpg" alt="Zilele Ușilor Deschise" class="news-img">
+                        </a>
+                        <div class="news-body">
+                            <a href="link-pages/usile-deschise24.html">
+                                <h3 class="news-title">Zilele Ușilor Deschise la Școala de Arte</h3>
+                            </a>
+                            <time class="news-date" datetime="2024-09-03">3 septembrie 2024</time>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <a href="link-pages/admitere24-25.html">
+                            <img src="images/news-img/adm24-25.jpg" alt="Admiterea 2024-2025" class="news-img">
+                        </a>
+                        <div class="news-body">
+                            <a href="link-pages/admitere24-25.html">
+                                <h3 class="news-title">Admiterea elevilor pentru anul de studii 2024-2025</h3>
+                            </a>
+                            <time class="news-date" datetime="2024-08-29">29 august 2024</time>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <a href="link-pages/armonii-apus.html">
+                            <img src="images/news-img/armonii-apus.jpg" alt="Armonii la Apus" class="news-img">
+                        </a>
+                        <div class="news-body">
+                            <a href="link-pages/armonii-apus.html">
+                                <h3 class="news-title">Vă invităm la "Armonii la Apus" pe 28 iunie</h3>
+                            </a>
+                            <time class="news-date" datetime="2024-06-26">26 iunie 2024</time>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin: 30px 0;">
+                    <a class="b-sec-btn" href="pages/activitati.html">Vezi toate activitățile</a>
+                </div>
+            </div>
+        </section>
+        <section class="index-sec">
+            <div class="parteneri-container">
+                <h1 class="parteneri-title">Partenerii Noștri</h1>
+                <p class="parteneri-subtitle">Colaborări care susțin educația artistică de calitate</p>
+
+                <div class="parteneri-carousel-wrapper">
+                    <div class="parteneri-carousel">
+                        <div class="partener-card">
+                            <div class="partener-logo-wrapper">
+                                <img src="images/primaria.png" alt="Primăria orașului Criuleni"
+                                    class="partener-logo-img">
+                            </div>
+                            <h3 class="partener-name">Primăria orașului Criuleni</h3>
+                            <p class="partener-desc">Sprijin local și promovare culturală în comunitate</p>
+                        </div>
+
+                        <div class="partener-card">
+                            <div class="partener-logo-wrapper">
+                                <img src="images/consiliul.png" alt="Consiliul Raional Criuleni"
+                                    class="partener-logo-img">
+                            </div>
+                            <h3 class="partener-name">Consiliul Raional Criuleni</h3>
+                            <p class="partener-desc">Coordonare și finanțare pentru proiecte educative</p>
+                        </div>
+
+                        <div class="partener-card">
+                            <div class="partener-logo-wrapper">
+                                <img src="images/guvern.png" alt="Ministerul Culturii" class="partener-logo-img">
+                            </div>
+                            <h3 class="partener-name">Ministerul Culturii</h3>
+                            <p class="partener-desc">Suport în dezvoltarea curricumului și certificare profesională</p>
+                        </div>
+
+                        <div class="partener-card">
+                            <div class="partener-logo-wrapper">
+                                <img src="images/academia.png" alt="Academia de Muzică, Teatru și Arte Plastice"
+                                    class="partener-logo-img">
+                            </div>
+                            <h3 class="partener-name">Academia de Muzică, Teatru și Arte Plastice</h3>
+                            <p class="partener-desc">Partener cultural cu experiență în educație artistică</p>
+                        </div>
+
+                        <div class="partener-card">
+                            <div class="partener-logo-wrapper">
+                                <img src="images/muzeul.national.png"
+                                    alt="Muzeul Național de Etnografie și Istorie Naturală" class="partener-logo-img">
+                            </div>
+                            <h3 class="partener-name">Muzeul Național de Etnografie și Istorie Naturală</h3>
+                            <p class="partener-desc">Colaborare pentru evenimente și proiecte culturale</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-prev" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" aria-label="Următorul">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-note">
-            <a href="pages/specializari.html#formular">
-                <span><i class="fa-regular fa-square-check"></i></span>
-                <p>Completează formularul de înscriere</p>
-            </a>
-            <a href="https://drive.google.com/file/d/1N3RSmZEMj3lqo5CqvjDcHwn2tpoETOsJ/view" target="_blank">
-                <span><i class="fa-regular fa-file"></i></span>
-                <p>Toate cerințele categoriei au fost îndeplinite</p>
-            </a>
-            <a href="#start">
-                <span>⇧</span>
-                <p>Citește din nou</p>
-            </a>
-
-        </div>
-
-        <hr>
-        <div class="footer-nav">
-
-            <div class="footer-col">
-                <h4 class="footer-h4">Despre Noi</h4>
-                <ul>
-                    <li><a href="pages/despre.html#istoric">Istoric</a></li>
-                    <li><a href="pages/despre.html#viziunea">Viziunea &<br>Misiunea Școlii</a></li>
-                    <li><a href="pages/despre.html#cadre">Cadre didactice</a></li>
-                    <li><a href="pages/despre.html#mandria">Mândria Școlii</a></li>
-                </ul>
+        <div class="footer-top">
+                <div class="footer-logo-box">
+                <a href="index.html">
+                    <img class="footer-logo" src="images/logo.png" alt="Logo Școala de Arte Criuleni">
+                </a>
             </div>
 
-            <div class="footer-col">
-                <h4 class="footer-h4">Specializare</h4>
-                <ul>
-                    <li><a href="pages/specializari.html#muzica">Muzicală</a></li>
-                    <li><a href="pages/specializari.html#creatie">Creativă</a></li>
-                    <li><a href="pages/specializari.html#formular">Formular</a></li>
-                    <li><a href="pages/specializari.html#preturi">Prețuri</a></li>
-                </ul>
-            </div>
+            <div class="footer-links">
 
-            <div class="footer-col">
-                <h4 class="footer-h4">Activități</h4>
-                <ul>
-                    <li><a href="pages/extracuricul.html">2025</a></li>
-                    <li><a href="pages/extracuricul.html#2024">2024</a></li>
-                </ul>
-            </div>
+                <div class="footer-nav">
 
-            <div class="footer-col">
-                <h4 class="footer-h4">Info & Contacte</h4>
-                <ul>
-                    <li><a href="pages/contacte.html#contacte">Date de contact</a></li>
-                    <li><a href="pages/contacte.html#harta">Harta</a></li>
-                </ul>
-            </div>
+                    <h4 class="footer-h4"><a href="pages/despre.html">Despre Noi</a></h4>
 
-            <div class="footer-col">
-                <h4 class="footer-h4">Urmărește-ne</h4>
+                    <h4 class="footer-h4"><a href="pages/specializari.html">Specializări</a></h4>
+
+                    <h4 class="footer-h4"><a href="pages/activitati.html">Activități</a></h4>
+
+                    <h4 class="footer-h4"><a href="pages/contacte.html">Info & Contacte</a></h4>
+
+                </div>
+
+            </div>
+            <div class="footer-social">
+                <h4>Urmărește-ne</h4>
                 <div class="social-links">
                     <span class="instagram-box">
                         <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank">
@@ -250,24 +339,30 @@
 
         <hr>
         <div class="footer-info">
-            <div>
-                <h2 class="footer-h2">Copyright &copy; Scoala de Arte Criuleni <span id="an"></span> | <span
-                        id="page-name"></span>
-                </h2>
+
+            <div class="footer-info-content">
+                <div>
+                    <h2 class="footer-h2">Copyright &copy; Școala de Arte Criuleni <span id="an"></span> | <span
+                            id="page-name"></span>
+                    </h2>
+                    <span class="footer-span">Republica Moldova, or. Criuleni, str. 31 August, 104</span>
+                </div>
+                <a href="https://mecc.gov.md/sites/default/files/regulament_scoli_arte_2011.pdf" target="_blank">
+                    <span><i class="fa-regular fa-file"></i></span>
+                    <p>Acte conform cărora activează școala</p>
+                </a>
             </div>
             <div>
-                <span class="footer-span">MD-4801, str. 31 August, 104, r-nul Criuleni, or. Criuleni, Republica
-                    Moldova</span>
-                <span class="footer-span">Fix: 0248 21 846 | E-mail: scoaladeartecriuleni@gmail.com</span>
-                <p class="disclaimer">Acest website a fost realizat în cadrul competiției "Tekwill Junior
-                    Ambassadors" organizată de proiectul "Tekwill în Fiecare Școală" și nu reflectă neapărat opinia
-                    proiectului.</p>
+                <p class="disclaimer">*Acest website a fost realizat de echipa TehnicART în cadrul competiției
+                    "Tekwill Junior Ambassadors" organizată de proiectul "Tekwill în Fiecare Școală" și nu reflectă
+                    neapărat opinia proiectului.*</p>
             </div>
+
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script type="module" src="js/firebase.js"></script>
+
 </body>
 
 </html>

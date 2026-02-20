@@ -1,9 +1,6 @@
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { app } from "./firebase.js"; 
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
-import { firebaseConfig } from './firebase-config.js';
 
-const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const contactForm = document.querySelector('.contactare');

@@ -25,7 +25,7 @@
     </button>
 
     <button class="home-btn">
-        <a id="home-news-link"><i class="fa-solid fa-house"></i></a>
+        <a id="referrer-link-top" href="#"><i class="fa-solid fa-house"></i></a>
     </button>
 
     <nav class="navMenu">
@@ -77,11 +77,11 @@
     <header>
         <div class="main-header">
             <a href="../index.html">
-                <img class="logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
+                <img class="logo" src="../images/logo.png">
             </a>
 
             <button class="home-menu">
-                <a id="home-news-link-menu"><i class="fa-solid fa-house"></i></a>
+                <a id="referrer-link-menu" href="#"><i class="fa-solid fa-house"></i></a>
             </button>
 
             <nav class="nav-links">
@@ -93,8 +93,11 @@
                             <h5>Despre noi</h5>
                             <div>
                                 <a href="../pages/despre.html#istoric">Istoric</a>
+
                                 <a href="../pages/despre.html#viziunea">Viziunea & Misiunea Școlii</a>
+
                                 <a href="../pages/despre.html#cadre">Cadre didactice</a>
+
                                 <a href="../pages/despre.html#mandria">Mândria școlii</a>
                             </div>
                         </div>
@@ -103,8 +106,9 @@
                             <h5>Specializări</h5>
                             <div>
                                 <a href="../pages/specializari.html#muzica">Muzica</a>
+
                                 <a href="../pages/specializari.html#creatie">Creație</a>
-                                <a href="../pages/specializari.html#preturi">Prețuri</a>
+
                                 <a href="../pages/specializari.html#formular">Formular de înscriere</a>
                             </div>
                         </div>
@@ -124,8 +128,11 @@
                     <a href="../pages/despre.html">Despre noi</a>
                     <div class="dropdown-content">
                         <a href="../pages/despre.html#istoric">Istoric</a>
+
                         <a href="../pages/despre.html#viziunea">Viziunea & Misiunea Școlii</a>
+
                         <a href="../pages/despre.html#cadre">Cadre didactice</a>
+
                         <a href="../pages/despre.html#mandria">Mândria școlii</a>
                     </div>
                 </div>
@@ -134,8 +141,9 @@
                     <a href="../pages/specializari.html">Specializări</a>
                     <div class="dropdown-content">
                         <a href="../pages/specializari.html#muzica">Muzica</a>
+
                         <a href="../pages/specializari.html#creatie">Creație</a>
-                        <a href="../pages/specializari.html#preturi">Prețuri</a>
+
                         <a href="../pages/specializari.html#formular">Formular de înscriere</a>
                     </div>
                 </div>
@@ -148,7 +156,6 @@
                         <a class="activitati-last-page" href="../pages/activitati.html">Ultima pagină</a>
                     </div>
                 </div>
-
             </nav>
             <button class="contacte-btn">
                 <a href="../pages/contacte.html">Contacte</a>
@@ -159,43 +166,28 @@
     <main id="start">
 
         <div class="content">
-
-            <div class="centered">
-                <h1 class="top-name">Vă invităm la Parada Talentelor pe 1 iunie</h1>
-                <time datetime="2024-06-26">26.06.2024</time>
-            </div>
-            <hr>
-            <section>
-                <div id="general" class="img-collage-container">
-                    <img class="img-collage" src="../images/news-img/armonii-apus.jpg"
-                        alt="Armonii la Apus - Imagine 1">
-                    <img class="img-collage" src="../images/news-img/armonii-apus2.jpg"
-                        alt="Armonii la Apus - Imagine 2">
-                    <img class="img-collage" src="../images/news-img/armonii-apus3.jpg"
-                        alt="Armonii la Apus - Imagine 3">
-                    <img class="img-collage" src="../images/news-img/armonii-apus4.jpg"
-                        alt="Armonii la Apus - Imagine 4">
+            <h1 class="top-name">Profesorii Școlii de Arte</h1>
+            <p class="prof-intro">Cunoaște echipa noastră de cadre didactice — dedicate formării artistice în
+                domeniile Muzică și Creație.</p>
+            <section class="professors-section">
+                <div class="professors-block" id="music">
+                    <h2 class="prof-section-title">Muzică</h2>
+                    <div class="professors-grid" id="music-professors"></div>
                 </div>
 
-                <div class="centered">
-                    <p>
-                        <i>
-                            Vă așteptăm cu drag! <br>
-                            - Ala Roșcovanu
-                        </i>
-                    </p>
+                <div class="professors-block" id="creatie">
+                    <h2 class="prof-section-title">Creație</h2>
+                    <div class="professors-grid" id="creatie-professors"></div>
                 </div>
             </section>
-
         </div>
 
     </main>
-
     <footer>
         <div class="footer-top">
             <div class="footer-logo-box">
                 <a href="../index.html">
-                    <img class="footer-logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
+                    <img class="footer-logo" src="../images/logo.png">
                 </a>
             </div>
 
@@ -261,6 +253,7 @@
         </div>
     </footer>
 
+    <script src="../js/profesori.js"></script>
     <script src="../js/main.js"></script>
 
 </body>

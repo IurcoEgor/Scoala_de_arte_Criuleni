@@ -310,9 +310,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement('div');
             card.className = 'news-card';
 
-            // Corectează căile pentru index.html (elimină ../)
-            const imagePath = event.image.replace('../', '');
-            const linkPath = event.link.replace('../', '');
+            // Corectează căile pentru index.html (elimină toate aparițiile lui ../)
+            const imagePath = event.image.replace(/\.\.\//g, '');
+            const linkPath = event.link.replace(/\.\.\//g, '');
 
             // Construiește descrierea, dacă există, pentru a fi identic cu pagina de activități
             const descriptionHtml = event.description ? `<p class="news-desc">${event.description}</p>` : '';

@@ -1,4 +1,57 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Salvarea paginii curente pentru navigare (fix pentru file:// unde referrer lipsește)
+    const pathName = window.location.pathname;
+    const pageName = pathName.substring(pathName.lastIndexOf('/') + 1);
+    if (pageName === 'index.html' || pageName === '' || pageName.startsWith('activitati')) {
+        sessionStorage.setItem('last_main_page', window.location.href);
+    }
+
+    // Link dinamic pentru butoanele "home" pe paginile de știri
+    const homeBtn = document.getElementById('home-news-link');
+    const homeMenu = document.getElementById('home-news-link-menu');
+
+    if (homeBtn || homeMenu) {
+        const fallbackUrl = '../pages/activitati.html';
+        let backUrl = fallbackUrl;
+        const referrer = document.referrer;
+        const storedReferrer = sessionStorage.getItem('last_main_page');
+
+        // Folosim referrer dacă există, altfel încercăm sessionStorage
+        const candidateUrl = referrer || storedReferrer;
+
+        if (candidateUrl) {
+            try {
+                const urlObj = new URL(candidateUrl);
+                const refPage = urlObj.pathname.substring(urlObj.pathname.lastIndexOf('/') + 1);
+
+                // Permitem revenirea la index.html sau la paginile de activități
+                if (refPage === 'index.html' || refPage.startsWith('activitati')) {
+                    backUrl = candidateUrl; // Folosim URL-ul complet pentru a păstra parametrii
+                }
+            } catch (e) {
+                // Dacă apare o eroare la parsarea URL-ului, se va folosi link-ul fallback.
+                console.warn('Could not parse URL:', candidateUrl, e);
+            }
+        }
+        if (homeBtn) homeBtn.setAttribute('href', backUrl);
+        if (homeMenu) homeMenu.setAttribute('href', backUrl);
+    }
+
+    // Link dinamic pentru ultima pagină de activități
+    if (window.EVENTS_DATA) {
+        const itemsPerPage = 9; // Asigură-te că valoarea este aceeași ca în events-loader.js
+        const totalEvents = window.EVENTS_DATA.length;
+        const totalPages = Math.max(1, Math.ceil(totalEvents / itemsPerPage));
+
+        const lastPageLinks = document.querySelectorAll('.activitati-last-page');
+
+        lastPageLinks.forEach(link => {
+            const currentHref = link.getAttribute('href');
+            const newHref = `${currentHref.split('?')[0]}?page=${totalPages}`;
+            link.setAttribute('href', newHref);
+        });
+    }
+
     // Data
     var data = new Date();
     const anSpan = document.getElementById('an');
@@ -27,11 +80,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Meniu mobil
     const list = document.querySelectorAll('.navList');
+
     function activeLink() {
         list.forEach((item) => item.classList.remove('active'));
         this.classList.add('active');
     }
     list.forEach((item) => item.addEventListener('click', activeLink));
+
+    // Setare automată a clasei active bazată pe URL
+    const currentPath = window.location.pathname;
+    list.forEach((item) => {
+        const link = item.querySelector('a').getAttribute('href');
+        // Verificăm dacă href-ul linkului se regăsește în calea curentă
+        if (currentPath.includes(link) || (link === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html')))) {
+            list.forEach((li) => li.classList.remove('active'));
+            item.classList.add('active');
+        }
+    });
 
     // Indicator meniu
     const navItems = document.querySelectorAll(".navMenu ul li");
@@ -227,6 +292,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Uncomment pentru a activa autoplay
         startAutoplay();
+    }
+
+    // Afișare ultimele 3 știri pe homepage
+    const homepageNewsContainer = document.getElementById('homepage-news-section');
+    if (homepageNewsContainer && window.EVENTS_DATA) {
+        const events = [...window.EVENTS_DATA];
+
+        // Sortează descrescător după dată
+        events.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        // Preia primele 3
+        const latestEvents = events.slice(0, 3);
+
+        // Funcție pentru a genera un card de știre
+        const createNewsCard = (event) => {
+            const card = document.createElement('div');
+            card.className = 'news-card';
+
+            // Corectează căile pentru index.html (elimină ../)
+            const imagePath = event.image.replace('../', '');
+            const linkPath = event.link.replace('../', '');
+
+            // Construiește descrierea, dacă există, pentru a fi identic cu pagina de activități
+            const descriptionHtml = event.description ? `<p class="news-desc">${event.description}</p>` : '';
+
+            // Formatează data pentru a fi identică cu cea din activitati.html
+            const formattedDate = new Date(event.date).toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+
+            card.innerHTML = `
+                <a href="${linkPath}">
+                    <img src="${imagePath}" alt="${event.alt || event.title}" class="news-img">
+                </a>
+                <div class="news-body">
+                    <a href="${linkPath}">
+                        <h3 class="news-title">${event.title}</h3>
+                    </a>
+                    ${descriptionHtml}
+                    <time class="news-date" datetime="${event.date}">${formattedDate}</time>
+                </div>
+            `;
+            return card;
+        };
+
+        homepageNewsContainer.innerHTML = '';
+        latestEvents.forEach(event => {
+            homepageNewsContainer.appendChild(createNewsCard(event));
+        });
     }
 });
 

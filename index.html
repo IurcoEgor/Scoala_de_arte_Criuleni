@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Site-ul oficial al Școlii de Arte din Criuleni. Descoperă-ți talentul artistic în muzică, dans, pictură și arte decorative.">
+    <meta name="keywords" content="Școala de Arte, Criuleni, Muzică, Dans, Pictură, Educație Artistică, Cursuri copii, Moldova">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -104,7 +109,7 @@
                             <div>
                                 <a href="pages/activitati.html">Prima pagină</a>
                                 <hr>
-                                <a href="pages/activitati2.html">Ultima pagină</a>
+                                <a class="activitati-last-page" href="pages/activitati.html">Ultima pagină</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +140,7 @@
                     <div class="dropdown-content">
                         <a href="pages/activitati.html">Prima pagină</a>
                         <hr>
-                        <a href="pages/activitati2.html">Ultima pagină</a>
+                        <a class="activitati-last-page" href="pages/activitati.html">Ultima pagină</a>
                     </div>
                 </div>
 
@@ -145,8 +150,6 @@
             </button>
         </div>
     </header>
-
-
 
     <main id="start">
         <div class="content" id="intro">
@@ -187,40 +190,8 @@
         <section class="index-sec">
             <div class="stiri-container">
                 <h1 class="stiri-h1">Activități și Anunțuri</h1>
-                <div class="news-section" style="justify-content: center;">
-                    <div class="news-card">
-                        <a href="link-pages/usile-deschise24.html">
-                            <img src="images/news-img/usi-dechise24.jpg" alt="Zilele Ușilor Deschise" class="news-img">
-                        </a>
-                        <div class="news-body">
-                            <a href="link-pages/usile-deschise24.html">
-                                <h3 class="news-title">Zilele Ușilor Deschise la Școala de Arte</h3>
-                            </a>
-                            <time class="news-date" datetime="2024-09-03">3 septembrie 2024</time>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <a href="link-pages/admitere24-25.html">
-                            <img src="images/news-img/adm24-25.jpg" alt="Admiterea 2024-2025" class="news-img">
-                        </a>
-                        <div class="news-body">
-                            <a href="link-pages/admitere24-25.html">
-                                <h3 class="news-title">Admiterea elevilor pentru anul de studii 2024-2025</h3>
-                            </a>
-                            <time class="news-date" datetime="2024-08-29">29 august 2024</time>
-                        </div>
-                    </div>
-                    <div class="news-card">
-                        <a href="link-pages/armonii-apus.html">
-                            <img src="images/news-img/armonii-apus.jpg" alt="Armonii la Apus" class="news-img">
-                        </a>
-                        <div class="news-body">
-                            <a href="link-pages/armonii-apus.html">
-                                <h3 class="news-title">Vă invităm la "Armonii la Apus" pe 28 iunie</h3>
-                            </a>
-                            <time class="news-date" datetime="2024-06-26">26 iunie 2024</time>
-                        </div>
-                    </div>
+                <div id="homepage-news-section" class="news-section" style="justify-content: center;">
+                    <!-- Ultimele știri vor fi încărcate aici de JavaScript -->
                 </div>
                 <div style="text-align: center; margin: 30px 0;">
                     <a class="b-sec-btn" href="pages/activitati.html">Vezi toate activitățile</a>
@@ -271,7 +242,7 @@
 
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
-                                <img src="images/muzeul.national.png"
+                                <img src="images/muzeul-national.png"
                                     alt="Muzeul Național de Etnografie și Istorie Naturală" class="partener-logo-img">
                             </div>
                             <h3 class="partener-name">Muzeul Național de Etnografie și Istorie Naturală</h3>
@@ -293,7 +264,7 @@
 
     <footer>
         <div class="footer-top">
-                <div class="footer-logo-box">
+            <div class="footer-logo-box">
                 <a href="index.html">
                     <img class="footer-logo" src="images/logo.png" alt="Logo Școala de Arte Criuleni">
                 </a>
@@ -361,6 +332,7 @@
         </div>
     </footer>
 
+    <script src="js/events-data.js"></script>
     <script src="js/main.js"></script>
 
 </body>

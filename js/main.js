@@ -1,30 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // START FIX: Corectarea automată a căilor de navigare pentru paginile de știri
-    // Problema: Paginile din folderul /link-pages/ au link-uri greșite în meniu
-    // (ex: 'pages/specializari.html' în loc de '../pages/specializari.html').
-    // Soluția: Detectăm dacă suntem pe o astfel de pagină și adăugăm prefixul '../'
-    // la toate link-urile și imaginile relative din header.
-    if (window.location.pathname.includes('/link-pages/') || window.location.href.includes('/link-pages/')) {
-        const prefix = '../';
-        
-        // Corectează toate link-urile (href) din header
-        document.querySelectorAll('header a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith(prefix)) {
-                link.setAttribute('href', prefix + href);
-            }
-        });
-
-        // Corectează toate imaginile (src) din header
-        document.querySelectorAll('header img').forEach(img => {
-            const src = img.getAttribute('src');
-            if (src && !src.startsWith('http') && !src.startsWith(prefix)) {
-                img.setAttribute('src', prefix + src);
-            }
-        });
-    }
-    // END FIX
-    
     // Salvarea paginii curente pentru navigare (fix pentru file:// unde referrer lipsește)
     const pathName = window.location.pathname;
     const pageName = pathName.substring(pathName.lastIndexOf('/') + 1);
@@ -380,4 +354,5 @@ function checkLength(el) {
         charCount.style.color = 'black';
     }
 }
+
 

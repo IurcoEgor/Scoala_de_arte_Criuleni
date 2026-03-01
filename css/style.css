@@ -171,7 +171,7 @@ header {
 
 .contacte-btn:hover {
     background-color: white;
-    color: rgb(36, 37, 42);
+    color: black;
 }
 
 /*  */
@@ -347,16 +347,16 @@ nav h5 {
 .dropdown-element {
     display: flex;
     flex-direction: column;
-    max-width: 165px;
+    max-width: 160px;
     min-width: 120px;
     width: auto;
-    gap: 4px;
+    gap: 5px;
 }
 
 .dropdown-element>div {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 /*  */
@@ -2574,7 +2574,7 @@ td {
 
     .dropdown-element,
     .dropdown-content {
-        max-width: 145px;
+        max-width: 140px;
     }
 
     .contacte-btn a {
@@ -2920,4 +2920,5 @@ td {
         font-size: 1.3rem;
     }
 }
+
 

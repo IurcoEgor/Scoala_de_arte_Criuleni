@@ -1,15 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Helper pentru curățarea căilor relative (elimină în mod repetat toate aparițiile lui ../)
-    function sanitizeRelativePath(path) {
-        if (typeof path !== 'string') return '';
-        let previous;
-        do {
-            previous = path;
-            path = path.replace(/\.\.\//g, '');
-        } while (path !== previous);
-        return path;
-    }
-
     // Salvarea paginii curente pentru navigare (fix pentru file:// unde referrer lipsește)
     const pathName = window.location.pathname;
     const pageName = pathName.substring(pathName.lastIndexOf('/') + 1);
@@ -321,9 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement('div');
             card.className = 'news-card';
 
-            // Corectează căile pentru index.html (elimină în mod repetat toate aparițiile lui ../)
-            const imagePath = sanitizeRelativePath(event.image);
-            const linkPath = sanitizeRelativePath(event.link);
+            // Corectează căile pentru index.html (elimină ../ recursiv pentru securitate)
+            const sanitize = p => { while(p.includes('../')) p = p.replace('../', ''); return p; };
+            const imagePath = sanitize(event.image);
+            const linkPath = sanitize(event.link);
 
             // Construiește descrierea, dacă există, pentru a fi identic cu pagina de activități
             const descriptionHtml = event.description ? `<p class="news-desc">${event.description}</p>` : '';

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -24,7 +26,7 @@
 
     <nav class="navMenu">
         <ul>
-            <li class="navList">
+            <li class="navList active">
                 <a href="despre.html">
                     <span class="icon">
                         <i class="fa-solid fa-circle-info"></i>
@@ -32,7 +34,7 @@
                     <span class="navText">Despre</span>
                 </a>
             </li>
-            <li class="navList active">
+            <li class="navList">
                 <a href="specializari.html">
                     <span class="icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -104,7 +106,7 @@
                             <div>
                                 <a href="activitati.html">Prima pagină</a>
                                 <hr>
-                                <a href="activitati2.html">Ultima pagină</a>
+                                <a class="activitati-last-page" href="activitati.html">Ultima pagină</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +137,7 @@
                     <div class="dropdown-content">
                         <a href="activitati.html">Prima pagină</a>
                         <hr>
-                        <a href="activitati2.html">Ultima pagină</a>
+                        <a class="activitati-last-page" href="activitati.html">Ultima pagină</a>
                     </div>
                 </div>
 
@@ -150,300 +152,162 @@
 
         <div class="content">
 
-            <h1 class="top-name">Specializările Școlii de Arte</h1>
-            <hr id="muzica">
+            <h1 class="top-name">Despre Școala de Arte</h1>
+            <hr id="istoric">
 
-            <section class="compartiment-box">
-                <h2 class="h2-special">Compartimentul Muzică</h2>
-                <div class="wrapper">
-                    <div class="accordion">
-                        <div class="accordion-panel">
-                            <h2 id="panel1-heading">
-                                <button class="accordion-trigger" aria-controls="panel1-content" aria-expanded="true">
-                                    <span class="accordion-title" id="panel1-title">Pian</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/piano-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel1-content" aria-labelledby="panel1-heading"
-                                aria-hidden="true" role="region">
-                                <p>Cursurile de pian învață tehnici de citire a notelor, dezvoltarea dexterității și
-                                    interpretarea pieselor din diverse stiluri muzicale.</p>
-                                <img src="../images/accordion/piano.png" alt="Pian" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel2-heading">
-                                <button class="accordion-trigger" aria-controls="panel2-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel2-title">Vioară</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/violin-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel2-content" aria-labelledby="panel2-heading"
-                                aria-hidden="true" role="region">
-                                <p>Elevii învață tehnici de arc, postura corectă și citirea partiturilor,
-                                    dezvoltându-și urechea muzicală și înțelegerea diferitelor stiluri.</p>
-                                <img src="../images/accordion/violin.png" alt="Vioara" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel3-heading">
-                                <button class="accordion-trigger" aria-controls="panel3-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel3-title">Chitară</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/guitar-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel3-content" aria-labelledby="panel3-heading"
-                                aria-hidden="true" role="region">
-                                <p>Se învață acorduri, ritmuri și solo-uri, cu accent pe aplicarea în diverse genuri
-                                    muzicale (rock, pop, blues, jazz).</p>
-                                <img src="../images/accordion/guitar.png" alt="Chitara" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel4-heading">
-                                <button class="accordion-trigger" aria-controls="panel4-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel4-title">Acordeon</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/accordion-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel4-content" aria-labelledby="panel4-heading"
-                                aria-hidden="true" role="region">
-                                <p>Cursurile includ învățarea acordurilor, tehnici de respirație și ritmuri
-                                    specifice acestui instrument cu claviatură și butoane.</p>
-                                <img src="../images/accordion/accordion.png" alt="Acordeon" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel5-heading">
-                                <button class="accordion-trigger" aria-controls="panel5-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel5-title">Trompetă</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/trumpet-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel5-content" aria-labelledby="panel5-heading"
-                                aria-hidden="true" role="region">
-                                <p>Cursurile se concentrează pe tehnici de respirație, intonație și controlul
-                                    sunetului, abordând muzica clasică și jazz.</p>
-                                <img src="../images/accordion/trumpet.png" alt="Trompeta" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel6-heading">
-                                <button class="accordion-trigger" aria-controls="panel6-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel6-title">Saxofon/Clarinet</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/saxophone-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel6-content" aria-labelledby="panel6-heading"
-                                aria-hidden="true" role="region">
-                                <p>Se învață tehnica de suflare, controlul respirației și îmbunătățirea tonului,
-                                    abordând diverse stiluri muzicale.</p>
-                                <img src="../images/accordion/saxophone.png" alt="Saxofon" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel7-heading">
-                                <button class="accordion-trigger" aria-controls="panel7-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel7-title">Canto</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/vocal-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel7-content" aria-labelledby="panel7-heading"
-                                aria-hidden="true" role="region">
-                                <p>Cursurile ajută la dezvoltarea vocii prin tehnici de respirație și expresivitate,
-                                    pentru a interpreta muzică cu impact.</p>
-                                <img src="../images/accordion/vocal.png" alt="Vocal" class="accordion-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-            <hr id="creatie">
-
-            <section class="compartiment-box">
-                <h2 class="h2-special">Compartimentul Creație</h2>
-                <div class="wrapper">
-                    <div class="accordion">
-                        <div class="accordion-panel">
-                            <h2 id="panel8-heading">
-                                <button class="accordion-trigger" aria-controls="panel8-content" aria-expanded="true">
-                                    <span class="accordion-title" id="panel8-title">Arta coregrafică</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/dance-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel8-content" aria-labelledby="panel8-heading"
-                                aria-hidden="true" role="region">
-                                <p>Dansul îmbină tehnica și expresia, transformând fiecare pas într-o poveste. Elevii
-                                    explorează diverse stiluri sub îndrumarea instructorilor noștri dedicați.</p>
-                                <img src="../images/accordion/dance.jpg" alt="Coregrafie" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel9-heading">
-                                <button class="accordion-trigger" aria-controls="panel9-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel9-title">Arta dramatică</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/drama-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel9-content" aria-labelledby="panel9-heading"
-                                aria-hidden="true" role="region">
-                                <p>Teatrul dă viață emoțiilor prin arta actoriei. Elevii exploră expresivitatea,
-                                    improvizația și tehnica scenică sub ghidajul profesorilor noștri.</p>
-                                <img src="../images/accordion/drama.jpg" alt="Dramă" class="accordion-image">
-                            </div>
-                        </div>
-
-                        <div class="accordion-panel">
-                            <h2 id="panel10-heading">
-                                <button class="accordion-trigger" aria-controls="panel10-content" aria-expanded="false">
-                                    <span class="accordion-title" id="panel10-title">Arta plastică</span>
-                                    <img aria-hidden="true" class="accordion-icons"
-                                        src="../images/accordion/painting-icon.png">
-                                </button>
-                            </h2>
-                            <div class="accordion-content" id="panel10-content" aria-labelledby="panel10-heading"
-                                aria-hidden="true" role="region">
-                                <p>Prin desen, pictură și sculptură, elevii transformă imaginația în opere de artă. Sub
-                                    îndrumarea profesorilor, fiecare elev descoperă propriul stil artistic.</p>
-                                <img src="../images/accordion/painting.png" alt="Arta plastică" class="accordion-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <hr id="preturi">
-
-            <section class="compartiment-box">
-                <h2 class="h2-special">Prețuri</h2>
-                <div class="price-grid">
-                    <div class="price-holder">
-                        <span class="name">Pian C. Muzica</span>
-                        <span class="price">350 lei</span>
-                    </div>
-                    <div class="price-holder">
-                        <span class="name">Altele C. Muzica</span>
-                        <span class="price">320 lei</span>
-                    </div>
-                    <div class="price-holder">
-                        <span class="name">Compart. Creație</span>
-                        <span class="price">290 lei</span>
-                    </div>
-                </div>
-                <div class="admitere">
+            <section>
+                <h2 class="h2-left">Scurt istoric</h2>
+                <div class="row">
+                    <img class="img-istoric" src="../images/istoricul.jpg" alt="Școala de Arte Criuleni - Istoric">
                     <p>
-                        <small>
-                            Admiterea elevilor în Școala de Arte Criuleni se face în baza concursului și cererii
-                            părintelui (tutorului legal) al elevului pe specialități în grupe pregătitoare sau școlare.
-                            Se primesc la studii copii și tineri cu vârsta de la 4 până la 14 ani, în dependență de
-                            specialitatea solicitată și în conformitate cu planul de studii stipulat de Ministerul
-                            Educației.
-                        </small>
+                        Instituită în 1969 Școala de Muzică cu 67 de elevi înmatriculați la specialități de pian,
+                        vioară, acordeon și instrumente aerofone, în anul 1995 instituția primește statut de Școală de
+                        Arte prin contopire cu școala de pictură din orașul Criuleni. În aproape 55 de ani de activitate
+                        instituția a oferit cunoștințe în domeniul artelor copiilor din oraș și regiune, având și
+                        filiale. La moment în Școala de Arte Criuleni învață 194 elevi la cele două compartimente Muzică
+                        și Creație.
                     </p>
-                    <div>
+                    <a class="mai-mult" href="../link-pages/istoricul.html">Mai mult</a>
+                </div>
             </section>
 
+            <hr id="viziunea">
 
-            <hr id="formular">
+            <section>
+                <h2 class="h2-left">Viziunea managerială</h2>
+                <p>
+                    Școala de Arte Criuleni tinde spre a fi o instituție de învățământ
+                    extrașcolar artistic deschisă comunității prin realizarea de parteneriate și colaborări, prin
+                    oferirea serviciilor educaționale de eficiență apreciată de elevi, părinți, parteneri și demonstrată
+                    prin progres în rezultate deosebite ale discipolilor și a cadrelor didactice pe plan local, național
+                    și internațional, prin îmbunătățirea condiţiilor materiale necesare unui învăţământ de calitate,
+                    precum și pentru asigurarea egalităţii şanselor tuturor elevilor doritori să facă studii la noi.
+                </p>
+                <br>
 
-            <section class="compartiment-box">
-                <h2 class="h2-special">Formular de înscriere</h2>
-                <div class="formular">
-                    <form class="inscrie" method="POST">
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label for="nume-prenume-elev">Nume și Prenume elev:</label>
-                                <input type="text" id="nume-prenume-elev" name="nume-prenume-elev"
-                                    pattern="[A-Z][a-zA-Z]{2,} [A-Z][a-zA-Z]{2,}"
-                                    title="Numele și prenumele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere fiecare"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="varsta-elev">Vârsta elev:</label>
-                                <input type="number" id="varsta-elev" name="varsta-elev" min="4" max="14" required>
-                            </div>
-                        </div>
+                <h2 class="h2-left">Misiunea școlii</h2>
+                <p>
+                    Realizarea unui program de dezvoltare a competențelor artistice la elevii din or. Criuleni și
+                    regiune, pregătirea lor preprofesională în domeniul artelor prin implimentarea politicilor
+                    educaționale specifice, oferirea unui produs extracurricular de calitate, diversificat, actual și
+                    motivant, desfășurat în climatul creativ și prietenos actorilor participanți ai actului educational,
+                    îndreptat spre dezvoltare multilaterală a personalității copilului și educarea tinerei generații în
+                    spiritul promovării și respectării valorilor europeene fundamentale, general-umane și naționale.
+                </p>
+            </section>
 
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label>Genul elevului:</label>
-                                <div class="form-group-row gen-buttons">
-                                    <input type="radio" id="gen-baiat" name="gen-elev" value="baiat" required>
-                                    <label for="gen-baiat" class="gen-label">Băiat</label>
-                                    <input type="radio" id="gen-fata" name="gen-elev" value="fata" required>
-                                    <label for="gen-fata" class="gen-label">Fată</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="specializare">Specializare:</label>
-                                <select id="specializare" name="specializare" required>
-                                    <option value="pian">Pian</option>
-                                    <option value="vioara">Vioară</option>
-                                    <option value="chitara">Chitară</option>
-                                    <option value="acordeon">Acordeon</option>
-                                    <option value="trompeta">Trompetă</option>
-                                    <option value="saxofon">Saxofon/clarinet</option>
-                                    <option value="interpretare">Canto</option>
-                                    <option value="arta-coregrafica">Arta coregrafică</option>
-                                    <option value="arta-dramatica">Arta dramatică</option>
-                                    <option value="arta-plastica">Artă plastică</option>
-                                </select>
-                            </div>
-                        </div>
+            <hr id="cadre">
 
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label for="nume-prenume-parinte">Nume și Prenume părinte:</label>
-                                <input type="text" id="nume-prenume-parinte" name="nume-prenume-parinte"
-                                    pattern="[A-Z][a-zA-Z]{2,} [A-Z][a-zA-Z]{2,}"
-                                    title="Numele și prenumele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere fiecare"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="localitate">Localitate:</label>
-                                <input type="text" id="localitate" name="localitate"
-                                    pattern="[A-Z][a-zA-Z]{2,}( [A-Z][a-zA-Z]{2,})?"
-                                    title="Orașul trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere"
-                                    required>
-                            </div>
-                        </div>
+            <section>
+                <h2 class="h2-left">Cadre didactice</h2>
+                <p>
+                    Studii academice de bază în domeniul artelor sunt oferite de către 21 de cadre
+                    didactice, dintre care 2 sunt tinerii specialiști, iar 6 sunt de vârstă pensionară, 18 sunt
+                    angajați de bază, iar 2 prin cumul extern.
+                </p>
+                <h3 class="centered">
+                    <span class="h-smaller">80% din profesori dețin următoarele grade didactice:</span>
+                </h3>
+                <ul>
+                    <li class="centered">15 au gradul didactic II </li>
+                    <li class="centered">unul deține gradul didactic superior</li>
+                </ul>
 
-                        <div class="form-group-row">
-                            <div class="form-group">
-                                <label for="email">E-mail:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="telefon">Telefon:</label>
-                                <input type="tel" id="telefon" name="telefon"
-                                    pattern="(\+373|0)\s?\d{2}\s?\d{3}\s?\d{3}"
-                                    title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required>
-                            </div>
-                        </div>
+                <table>
+                    <tr>
+                        <th>Total cadre didactice</th>
+                        <th>Studii superioare</th>
+                        <th>Studii medii de specialitate</th>
+                        <th>Studii medii</th>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>15</td>
+                        <td>6</td>
+                        <td>0</td>
+                    </tr>
+                </table>
 
-                        <div class="form-group">
-                            <input type="submit" value="Trimite" class="btn">
-                        </div>
-                    </form>
+                <p>
+                    În ultimii 5 ani 4 persoane au absolvit ciclul de Licență și 3 persoane, ciclul de
+                    Master în domeniul educației. 9 profesori sunt absolvenții Școlii de Arte Criuleni în
+                    diferiți ani.
+                </p>
+
+                <div class="descriere-director">
+                    <img class="img-director" src="../images/director.jpg" alt="Directorul Școlii de Arte Criuleni">
+                    <p class="p-descriere-director">
+                        <span class="descriere">Directorul - Dimitrașco Natalia realizează managementul Școlii de
+                            arte</span> <br>
+                        <span class="descriere">Director, grad managerial unu</span> <br>
+                        <span class="descriere">Profesoară de artă teatrală, grad didactic superior</span> <br>
+                        <span class="descriere">Conducătoarea Studioului artistic ”Micul Prinț”</span> <br>
+                        <span class="descriere">Studii superioare pedagogie/culturologie</span> <br>
+                        <span class="descriere">Universitatea de Stat din Tiraspol, Academia de Muzică, Teatru și
+                            Arte Plastice</span> <br>
+                        <span class="descriere">Stagiu de lucru 30 ani</span> <br>
+                    </p>
                 </div>
+                
+                <a class="profesori-btn" href="../link-pages/profesori.html">Vezi Profesorii</a>
+
+            </section>
+
+            <hr id="mandria">
+
+            <section>
+                <h2 class="h2-left">Mândria școlii/absolvenții</h2>
+                <p>
+                    Cinci colective artistice formate de profesori în școală duc faima Criuleniului evoluînd pe scenele
+                    locale, raionale, pe platourile festivalurilor şi concursuri naţionale şi internaţionale. "Victoria
+                    junior", "Crio dance", "KorAll", "Micul prinț" și ansamblul de muzică populară.
+                </p>
+
+                <p>
+                    Școală de arte Criuleni se mândrește nespus cu realizările discipoilor săi, în deosebi
+                    absolvenților, care au continuat drumul lor în arte profesionist:
+                </p>
+                <ul>
+                    <li>
+                        Ion Jabinschi, prodecanul facultăţii "Facultatea Arte Plastice, Decorative şi Design" -
+                        "Academia de Muzică, Teatru, Arte Plastice", lectorii academiei, Igor Caprian, Tatiana
+                        Jabinschi;
+                    </li>
+                    <li>
+                        Irina Nicolai - compozitoare, profesoară de muzică la Şcola Primară Criuleni, autoarea imnului
+                        or. Criuleni;
+                    </li>
+                    <li>
+                        Andrei Măgurean, fost director al Casei de cultură şi mentorul colectivului de
+                        fluierişti "Izvoarele din Oniţcani", Andrei Bordeian actualul director aceleiași instituții și
+                        conducătorul colectivului vocal de copii din s. Onițcani;
+                    </li>
+                    <li>
+                        Oleg Zatic a ajuns să fie prim-dirijor al Orchestrei Prezidenţiale, iar Ion Buraveţ –
+                        instrumentist în aceeași orchestră;
+                    </li>
+                    <li>
+                        Jabinschi Leonid şi Sclifos Constantin au fondat și conduc în satul Ustia fanfara satului, în
+                        calitate de dirijor şi acompaniator;
+                    </li>
+                    <li>
+                        Igor Burciu - profesor de acordeon la școala de muzică rl Sîngerei;
+                    </li>
+                    <li>
+                        Gherciu Ion - conducătorul colectivului de dans a Centrului Raional de Cultură Criuleni;
+                    </li>
+                </ul>
+
+                <p>
+                    Mai fac studii în diferite instituții de învățământ artistic superior absolvenții Școlii de Arte
+                    Criuleni: <br>
+                    Mihai Nenița - Conservatorul din St. Petersburg, Federația Rusă; <br>
+                    Vlad Stahi - Universitatea Națională de Arte "George Enescu" din Iași, România; <br>
+                    Doina Stoica și Ion Gârneț - Academia de Muzică, Teatru și Arte Plastice din Chișinău.
+                </p>
+                <p>
+                    În ultimii 25 de ani certificate de absolvire a școlii de Arte Criuleni au primit 1246 de tineri.
+                </p>
             </section>
 
         </div>
@@ -498,7 +362,6 @@
 
         <hr>
         <div class="footer-info">
-
             <div class="footer-info-content">
                 <div>
                     <h2 class="footer-h2">Copyright &copy; Școala de Arte Criuleni <span id="an"></span> | <span
@@ -512,20 +375,14 @@
                 </a>
             </div>
             <div>
-
                 <p class="disclaimer">*Acest website a fost realizat de echipa TehnicART în cadrul competiției
                     "Tekwill Junior Ambassadors" organizată de proiectul "Tekwill în Fiecare Școală" și nu reflectă
                     neapărat opinia proiectului.*</p>
             </div>
-
-        </div>
-
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
-    <script type="module" src="../js/firebase.js"></script>
-    <script type="module" src="../js/forms.js"></script>
 
 </body>
 

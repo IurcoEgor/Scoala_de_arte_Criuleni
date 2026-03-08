@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     // Salvarea paginii curente pentru navigare (fix pentru file:// unde referrer lipsește)
     const pathName = window.location.pathname;
     const pageName = pathName.substring(pathName.lastIndexOf('/') + 1);
@@ -311,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.className = 'news-card';
 
             // Corectează căile pentru index.html (elimină ../ recursiv pentru securitate)
-            const sanitize = p => { while(p.includes('../')) p = p.replace('../', ''); return p; };
+            const sanitize = p => { while (p.includes('../')) p = p.replace('../', ''); return p; };
             const imagePath = sanitize(event.image);
             const linkPath = sanitize(event.link);
 
@@ -343,16 +344,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-function checkLength(el) {
+// Funcție pentru verificarea lungimii textului (definită global)
+window.checkLength = function (el) {
     const maxLength = 300;
     const currentLength = el.value.length;
     const charCount = document.getElementById('charCount');
-    charCount.textContent = `${currentLength}/${maxLength} caractere`;
-    if (currentLength >= maxLength) {
-        charCount.style.color = 'red';
-    } else {
-        charCount.style.color = 'black';
+
+    if (charCount) {
+        charCount.textContent = `${currentLength} / ${maxLength}`;
+
+        if (currentLength >= maxLength) {
+            charCount.classList.add('limit-reached');
+        } else {
+            charCount.classList.remove('limit-reached');
+        }
     }
+};
+
+// Inițializare contor la încărcarea paginii (dacă există text)
+const messageTextarea = document.querySelector('textarea[name="message"]');
+if (messageTextarea) {
+    window.checkLength(messageTextarea);
 }
-
-

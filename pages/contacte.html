@@ -14,7 +14,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="https://kit.fontawesome.com/06ac0fa886.js" crossorigin="anonymous"></script>
-    <title>Școala de Arte Criuleni</title>
+    <title>Contacte | Școala de Arte Criuleni</title>
 </head>
 
 <body>
@@ -95,7 +95,7 @@
                             <div>
                                 <a href="specializari.html#muzica">Muzica</a>
                                 <a href="specializari.html#creatie">Creație</a>
-                                <a href="specializari.html#preturi">Prețuri</a>
+                                <a href="specializari.html#curricula">Curricula</a>
                                 <a href="specializari.html#formular">Formular de înscriere</a>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                     <div class="dropdown-content">
                         <a href="specializari.html#muzica">Muzica</a>
                         <a href="specializari.html#creatie">Creație</a>
-                        <a href="specializari.html#preturi">Prețuri</a>
+                        <a href="specializari.html#curricula">Curricula</a>
                         <a href="specializari.html#formular">Formular de înscriere</a>
                     </div>
                 </div>
@@ -201,26 +201,32 @@
                         <span class="circle one"></span>
                         <span class="circle two"></span>
 
-                        <form class="contactare" method="POST">
+                        <form class="contactare" method="POST" novalidate>
                             <h3 class="title">Contactează-ne</h3>
                             <div class="input-container">
                                 <input id="nume" type="text" name="name" class="input" placeholder="Nume"
                                     pattern="[A-Z][a-zA-Z]{2,}( [A-Z][a-zA-Z]{2,})?"
                                     title="Numele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere"
                                     required>
+                                <small class="error-message"></small>
                             </div>
                             <div class="input-container">
                                 <input type="email" name="email" class="input" placeholder="E-mail" required>
+                                <small class="error-message"></small>
                             </div>
                             <div class="input-container">
                                 <input type="tel" name="phone" class="input" placeholder="Telefon"
                                     pattern="(\+373|0)\s?\d{2}\s?\d{3}\s?\d{3}"
                                     title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required>
+                                <small class="error-message"></small>
                             </div>
                             <div class="input-container textarea">
-                                <textarea name="message" class="input" placeholder="Mesajul dvs" maxlength="300"
-                                    required oninput="checkLength(this)"></textarea>
-                                <small id="charCount">0/300 caractere</small>
+                                <div class="textarea-wrapper">
+                                    <textarea name="message" class="input" placeholder="Mesajul dvs" maxlength="300"
+                                        required oninput="checkLength(this)"></textarea>
+                                    <small id="charCount">0 / 300</small>
+                                </div>
+                                <small class="error-message"></small>
                             </div>
                             <input type="submit" value="Trimite" class="btn">
                         </form>
@@ -251,15 +257,10 @@
             <div class="footer-links">
 
                 <div class="footer-nav">
-
                     <h4 class="footer-h4"><a href="despre.html">Despre Noi</a></h4>
-
                     <h4 class="footer-h4"><a href="specializari.html">Specializări</a></h4>
-
                     <h4 class="footer-h4"><a href="activitati.html">Activități</a></h4>
-
-                    <h4 class="footer-h4"><a href="contacte.html">Info & Contacte</a></h4>
-
+                    <h4 class="footer-h4"><a href="contacte.html">Contacte</a></h4>
                 </div>
 
             </div>
@@ -296,7 +297,7 @@
                     </h2>
                     <span class="footer-span">Republica Moldova, or. Criuleni, str. 31 August, 104</span>
                 </div>
-                <a href="https://mecc.gov.md/sites/default/files/regulament_scoli_arte_2011.pdf" target="_blank">
+                <a href="../resources/regulament-scoli-arte.pdf" target="_blank">
                     <span><i class="fa-regular fa-file"></i></span>
                     <p>Acte conform cărora activează școala</p>
                 </a>

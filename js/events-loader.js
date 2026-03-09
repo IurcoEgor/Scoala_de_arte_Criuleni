@@ -145,4 +145,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   pageItems.forEach(ev => newsSection.appendChild(renderCard(ev)));
 
   buildPagination(pagination, totalPages, currentPage);
+
+  // Animație modernă pentru cardurile de știri
+  const animatedCards = newsSection.querySelectorAll('.news-card:not(.empty)');
+  if (animatedCards.length > 0 && 'IntersectionObserver' in window) {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px 65px 0px" // Se activează puțin înainte de a fi complet vizibil
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animatedCards.forEach((card, index) => {
+      card.style.transitionDelay = `${index * 7}ms`; // Efect de cascadă
+      observer.observe(card);
+    });
+  }
 });

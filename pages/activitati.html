@@ -159,14 +159,28 @@
                         <div class="news-section" id="news-section"></div>
                         <nav class="news-pagination" id="news-pagination"></nav>
                     </div>
-                    <aside class="announcement-container">
-                        <div class="news-announcement">
-                            <h3 class="announcement-title">Anunț important</h3>
-                            <p class="announcement-text">
-                                Admiterea pentru anul 2025 - 2026 a început! <br>
-                                Completează <a href="specializari.html#formular">formularul de înscriere</a> până la 1
-                                septembrie.
-                            </p>
+                    <aside class="calendar-container">
+                        <div class="calendar-widget">
+                            <div class="calendar-header">
+                                <button class="calendar-nav" id="cal-prev" aria-label="Luna precedentă"><i class="fas fa-chevron-left"></i></button>
+                                <h3 id="cal-month-year"></h3>
+                                <button class="calendar-nav" id="cal-next" aria-label="Luna următoare"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-weekdays">
+                                <span>Lu</span>
+                                <span>Ma</span>
+                                <span>Mi</span>
+                                <span>Jo</span>
+                                <span>Vi</span>
+                                <span>Sâ</span>
+                                <span>Du</span>
+                            </div>
+                            <div class="calendar-days" id="cal-days"></div>
+                            <div class="calendar-legend">
+                                <div class="legend-item"><span class="dot past"></span>Trecut</div>
+                                <div class="legend-item"><span class="dot upcoming"></span>Planificat</div>
+                                <div class="legend-item"><span class="dot today"></span>Azi</div>
+                            </div>
                         </div>
                     </aside>
                 </div>
@@ -242,6 +256,7 @@
     <script src="../js/main.js"></script>
     <script src="../js/events-data.js"></script>
     <script src="../js/events-loader.js"></script>
+    <script src="../js/calendar.js"></script>
 
 </body>
 

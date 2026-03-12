@@ -13,10 +13,6 @@ Site-ul a fost realizat de echipa **TehnicART** în cadrul competiției *"Tekwil
 
 Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://iurcoegor.github.io/Scoala_de_arte_Criuleni/)**
 
-## 📸 Prezentare Vizuală
-
-*(Aici pot fi adăugate capturi de ecran sau un GIF care demonstrează designul responsive și funcționalitățile cheie ale site-ului.)*
-
 ## ✨ Caracteristici Cheie
 
 - **Design Responsive și Modern:** Interfață complet adaptabilă pentru desktop, tablete și dispozitive mobile, construită cu Flexbox și Grid Layout.

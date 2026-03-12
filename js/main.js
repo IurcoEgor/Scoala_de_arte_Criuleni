@@ -74,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "istoricul": "Despre Noi - Istoric",
         "specializari": "Specializări",
         "activitati": "Activități",
-        "contacte": "Info & Contacte",
+        "contacte": "Contacte",
+        "profesori": "Profesori",
     };
     const pageTitle = pageTitles[window.location.pathname.split('/').pop().split('.')[0]] || "Activitate";
     if (span) span.textContent = pageTitle;
@@ -366,3 +367,4 @@ const messageTextarea = document.querySelector('textarea[name="message"]');
 if (messageTextarea) {
     window.checkLength(messageTextarea);
 }
+

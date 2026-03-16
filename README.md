@@ -29,6 +29,7 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
   - **Acordeon Animat:** Prezentare elegantă și interactivă a specializărilor.
   - **Buton "Scroll to Top"** și alte micro-interacțiuni pentru o experiență de utilizare fluidă.
 - **Integrare Backend cu Firebase:**
+  - **Pagină de Eroare 404:** O pagină personalizată și prietenoasă pentru link-uri invalide, care îmbunătățește experiența utilizatorului.
   - **Formulare Funcționale:** Formular de contact și de înscriere cu validare avansată client-side.
   - **Colectare de Date:** Datele din formulare sunt trimise și stocate în siguranță în **Firestore Database**.
   - **Notificări Toast:** Feedback vizual pentru utilizator la trimiterea cu succes sau în caz de eroare a unui formular.
@@ -50,6 +51,7 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
 
 ```
 /
+├── 404.html                  # Pagina de eroare
 ├── index.html                # Pagina principală
 ├── README.md                 # Acest fișier
 ├── css/
@@ -67,7 +69,6 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
 │   ├── specializari.html     # Detalii despre disciplinele și cursurile oferite
 │   ├── activitati.html       # Calendarul și galeria evenimentelor școlare
 │   └── contacte.html         # Formular de contact și date de localizare
-
 ├── link-pages/               
 │   ├── profesori.html        # Pagina dedicată cadrelor didactice
 │   ├── istoric.html          # Pagina cu istoricul instituției

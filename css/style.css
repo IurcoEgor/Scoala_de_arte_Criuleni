@@ -2640,6 +2640,122 @@ td {
     display: block;
 }
 
+/* Error Page (404) */
+.error-page-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: calc(100vh - 86px); /* Viewport height - header - footer approx */
+    padding: 40px 20px 40px 20px;
+}
+
+.error-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.error-code {
+    font-size: 8rem;
+    font-weight: 700;
+    color: #c9d6ff;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 0px #394694;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.error-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1c3370;
+    margin: 0 0 15px 0;
+}
+
+.error-message-main {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.error-btn {
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid transparent;
+}
+
+.error-btn.primary {
+    background-color: #394694;
+    color: white;
+}
+
+.error-btn.primary:hover {
+    background-color: #2c366e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(57, 70, 148, 0.2);
+}
+
+.error-btn.secondary {
+    background-color: transparent;
+    color: #394694;
+    border-color: #8fa9fd;
+}
+
+.error-btn.secondary:hover {
+    background-color: #eef2ff;
+    border-color: #394694;
+    transform: translateY(-2px);
+}
+
+.error-suggestions {
+    text-align: left;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #8fa9fd;
+}
+
+.error-suggestions h4 {
+    margin: 0 0 10px 0;
+    color: #1c3370;
+}
+
+.error-suggestions ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: '✓ ';
+}
+
+.error-suggestions li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.error-suggestions li:last-child {
+    margin-bottom: 0;
+}
+
 /* Toast Notifications */
 #toast-container {
     position: fixed;

@@ -63,7 +63,7 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
 │   ├── profesori.js          # Datele și logica pentru afișarea profesorilor
 │   ├── calendar.js           # Logica pentru widget-ul de calendar
 │   ├── forms.js              # Logica pentru validarea și trimiterea formularelor
-│   └── firebase.js           # Configurația Firebase (trebuie creat)
+│   └── firebase.js           # Configurația Firebase
 ├── pages/
 │   ├── despre.html           # Informații generale despre instituție
 │   ├── specializari.html     # Detalii despre disciplinele și cursurile oferite

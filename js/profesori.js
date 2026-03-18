@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Dîrul Vladislav',
                 role: 'Profesor de clarinet și saxofon',
-                img: '../images/Dîrul-Vladislav.jpg',
+                img: '../images/Dirul-Vladislav.jpg',
                 studii: 'Studii superioare, Universitatea de Stat din Comrat',
                 stagiu: '3 ani',
                 dob: '16 mai 1996',
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Ilieș Nina',
                 role: 'Profesoară de solfegiu și pian general, grad didactic doi',
-                img: '../images/Ilieș-Nelea.jpg',
+                img: '../images/Ilies-Nelea.jpg',
                 studii: 'Studii profesional tehnice, Colegiul de muzică „Ștefan Neaga”',
                 stagiu: '48 ani',
                 dob: '24 noiembrie 1958',
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Mîndru Petru',
                 role: 'Profesor de vioară și chitară, grad didactic doi, conducător de orchestră populară',
-                img: '../images/Mîndru-Petru.JPG',
+                img: '../images/Mindru-Petru.JPG',
                 studii: 'Studii profesional tehnice, Colegiul de Arte din Soroca',
                 stagiu: '',
                 dob: '10 iulie 1962',
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Sitișco Ruslan',
                 role: 'Profesor de coregrafie, grad didactic doi — Conducătorul colectivului „Criodance”',
-                img: '../images/Sitișco-Ruslan.jpg',
+                img: '../images/Sitisco-Ruslan.jpg',
                 studii: 'Studii superioare, Academia de Muzică, Teatru și Arte Plastice',
                 stagiu: '14 ani',
                 dob: '8 octombrie 1983',
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Ala Roșcovanu',
                 role: 'Profesoară de Arte plastice',
-                img: '../images/Roșcovanu-Ala.jpg',
+                img: '../images/Roscovanu-Ala.jpg',
                 studii: 'Studii superioare de master, Universitatea de Stat „Ion Creangă”',
                 stagiu: '5 ani',
                 dob: '',
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 name: 'Șerbu Mihail',
                 role: 'Profesor Arta plastică, grad didactic doi',
-                img: '../images/Șerbu-Mihail.jpg',
+                img: '../images/Serbu-Mihail.jpg',
                 studii: 'Studii superioare, Universitatea „Ion Creangă”',
                 stagiu: 'peste 35 ani',
                 dob: '24 iulie 1967',
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.innerHTML = `
                 <div class="prof-card-inner">
                     <div class="prof-image">
-                        <img src="${prof.img}" alt="${prof.name}">
+                        <img src="${prof.img}" alt="${prof.name}" loading="lazy" width="240" height="240">
                     </div>
                     <div class="prof-info">
                         <h3>${prof.name}</h3>
@@ -201,14 +201,14 @@ document.addEventListener('DOMContentLoaded', function () {
     reveals.forEach(el => observer.observe(el));
 
     // Set referrer/back links for header buttons (only same-origin; external/direct access uses fallback)
-    (function setRefLinks(){
+    (function setRefLinks() {
         const fallback = '../pages/despre.html';
         const ref = document.referrer;
-        ['referrer-link-top','referrer-link-menu'].forEach(id=>{
+        ['referrer-link-top', 'referrer-link-menu'].forEach(id => {
             const a = document.getElementById(id);
-            if(!a) return;
+            if (!a) return;
             // Check if referrer is same-origin (internal link)
-            if(ref && new URL(ref).origin === window.location.origin) {
+            if (ref && new URL(ref).origin === window.location.origin) {
                 a.href = ref;
             } else {
                 // External referrer or direct access - use fallback page

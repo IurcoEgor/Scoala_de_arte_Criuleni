@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const img = document.createElement('img');
     img.src = ev.image;
     img.alt = ev.alt || ev.title;
+    img.loading = 'lazy';
+    img.height = 175; // Conform CSS .news-img { height: 175px; }
     img.className = 'news-img';
     aImg.appendChild(img);
     card.appendChild(aImg);

@@ -59,6 +59,7 @@ body {
 
 main {
     min-height: 100vh;
+    /* background-color: rgb(228, 236, 255); */
     background-color: rgb(248, 250, 255);
     color: rgb(14, 25, 55);
 }
@@ -69,6 +70,7 @@ main {
 
 .content section:nth-of-type(2n),
 main> :nth-child(2n) {
+    /* background-color: rgb(28, 51, 111, 0.95); */
     background: linear-gradient(180deg, rgb(28, 51, 111, 0.90) 0%, rgb(28, 51, 111, 1) 100%);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -505,6 +507,7 @@ a {
 footer {
     line-height: 1.5;
     background: rgb(239, 243, 255);
+    /* color: rgb(68, 71, 76); */
     color: rgb(14, 25, 55);
     padding: 28px 6%;
     display: flex;
@@ -822,6 +825,7 @@ footer hr {
 .accordion-title {
     color: rgb(245, 245, 247);
     font-size: 1.5rem;
+    /* font-family: 'Poppins', 'Arial', 'Helvetica', sans-serif; */
     font-weight: 700;
     position: relative;
     isolation: isolate;
@@ -1567,6 +1571,7 @@ hr {
 .b-sec-btn {
     margin: 12px 0;
     padding: 12px 28px;
+    /* background: rgb(143, 169, 253); */
     background-color: rgb(36, 168, 109);
     color: white;
     border-radius: 20px;
@@ -1576,6 +1581,7 @@ hr {
 }
 
 .b-sec-btn:hover {
+    /* background: #394694; */
     background: #168f4e;
 }
 
@@ -1617,6 +1623,7 @@ hr {
 
 .specializare.creatie {
     background-image: linear-gradient(to top, rgba(22, 143, 78, 0.85), rgba(22, 143, 78, 0.35)), url('../images/creatie-bg.jpg');
+    /* background-image: linear-gradient(to top, rgba(249, 124, 79, 0.85), rgba(249, 124, 79, 0.35)), url('../images/creatie-bg.jpg'); */
 }
 
 .spec-content {
@@ -1630,6 +1637,7 @@ hr {
 
 .specializare.creatie .spec-content {
     background: linear-gradient(to top, rgba(22, 143, 78, 0.85) 60%, transparent 100%);
+    /* background: linear-gradient(to top, rgba(249, 124, 79, 0.85) 60%, transparent 100%); */
 }
 
 .spec-content h2 {
@@ -1901,13 +1909,14 @@ hr {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
+    row-gap: 3px;
 }
 
 .calendar-day {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35px;
+    height: 32px;
     border-radius: 50%;
     font-size: 0.9rem;
     position: relative;
@@ -2170,7 +2179,6 @@ td {
 /* Istoric */
 
 .row {
-    /* overflow: hidden; */
     padding: 20px 0;
 }
 
@@ -2606,22 +2614,18 @@ td {
 .form-group .error-message,
 .input-container .error-message {
     color: #e74c3c;
-    /* A red color, similar to the toast error */
     font-size: 0.85rem;
     font-weight: 500;
     display: none;
-    /* Hidden by default */
     margin-top: 5px;
 }
 
 .form-group .error-message {
     padding-left: 1rem;
-    /* Align with input text */
 }
 
 .input-container .error-message {
     padding-left: 1.2rem;
-    /* Align with input text */
 }
 
 .form-group .gen-buttons+.error-message {
@@ -2633,7 +2637,6 @@ td {
 .input-container input.invalid,
 .input-container textarea.invalid {
     border-color: #e74c3c !important;
-    /* Use important to override focus styles */
 }
 
 .error-message.visible {
@@ -2646,7 +2649,7 @@ td {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: calc(100vh - 86px); /* Viewport height - header - footer approx */
+    min-height: calc(100vh - 86px);
     padding: 40px 20px 40px 20px;
 }
 
@@ -2666,8 +2669,15 @@ td {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .error-title {
@@ -2825,6 +2835,33 @@ td {
         transform: translateX(100%);
         opacity: 0;
     }
+}
+
+/* Clasa pentru accesibilitate (Screen Reader Only) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Stiluri pentru fieldset-ul de gen din formularul de înscriere */
+.gen-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gen-fieldset legend {
+    padding: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: 'Poppins', 'Arial', 'Helvetica', sans-serif;
 }
 
 @media screen and (max-width: 720px) {
@@ -3115,6 +3152,10 @@ td {
 
 @media screen and (max-width: 768px) {
 
+    .content hr {
+        top: 0;
+    }
+
     header {
         display: none;
     }
@@ -3358,7 +3399,7 @@ td {
     }
 
     .news-card {
-        min-width: 85%;
+        min-width: 88%;
     }
 }
 

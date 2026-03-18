@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "activitati": "Activități",
         "contacte": "Contacte",
         "profesori": "Profesori",
+        "404": "Eroare 404"
     };
     const pageTitle = pageTitles[window.location.pathname.split('/').pop().split('.')[0]] || "Activitate";
     if (span) span.textContent = pageTitle;
@@ -324,11 +325,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const formattedDate = new Date(event.date).toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
 
             card.innerHTML = `
-                <a href="${linkPath}">
-                    <img src="${imagePath}" alt="${event.alt || event.title}" class="news-img">
+                <a href="${linkPath}" title="${event.title}">
+                    <img src="${imagePath}" alt="${event.alt || event.title}" class="news-img" loading="lazy" height="175">
                 </a>
                 <div class="news-body">
-                    <a href="${linkPath}">
+                    <a href="${linkPath}" title="${event.title}">
                         <h3 class="news-title">${event.title}</h3>
                     </a>
                     ${descriptionHtml}
@@ -341,6 +342,33 @@ document.addEventListener("DOMContentLoaded", function () {
         homepageNewsContainer.innerHTML = '';
         latestEvents.forEach(event => {
             homepageNewsContainer.appendChild(createNewsCard(event));
+        });
+    }
+
+    // Animație la derulare (Reveal)
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px" // Se activează puțin înainte de a fi complet vizibil
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    el.classList.add('visible');
+                    observer.unobserve(el);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(el => {
+            const delay = el.dataset.revealDelay;
+            if (delay) {
+                el.style.transitionDelay = `${delay}ms`;
+            }
+            observer.observe(el);
         });
     }
 });
@@ -367,4 +395,3 @@ const messageTextarea = document.querySelector('textarea[name="message"]');
 if (messageTextarea) {
     window.checkLength(messageTextarea);
 }
-

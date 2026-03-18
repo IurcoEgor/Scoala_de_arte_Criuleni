@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Site-ul oficial al Școlii de Arte din Criuleni. Descoperă-ți talentul artistic în muzică, dans, pictură și arte decorative.">
-    <meta name="keywords" content="Școala de Arte, Criuleni, Muzică, Dans, Pictură, Educație Artistică, Cursuri copii, Moldova">
+    <meta name="keywords"
+        content="Școala de Arte, Criuleni, Muzică, Dans, Pictură, Educație Artistică, Cursuri copii, Moldova">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/">
+    <meta property="og:title" content="Homepage | Școala de Arte Criuleni">
+    <meta property="og:description"
+        content="Site-ul oficial al Școlii de Arte din Criuleni. Descoperă-ți talentul artistic în muzică, dans, pictură și arte decorative.">
+    <meta property="og:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/">
+    <meta property="twitter:title" content="Homepage | Școala de Arte Criuleni">
+    <meta property="twitter:description"
+        content="Site-ul oficial al Școlii de Arte din Criuleni. Descoperă-ți talentul artistic în muzică, dans, pictură și arte decorative.">
+    <meta property="twitter:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +40,8 @@
 
 <body>
 
-    <button id="scrollTopBtn" title="Sus">
-        <i class="fa-solid fa-arrow-up"></i>
+    <button id="scrollTopBtn" title="Sus" aria-label="Mergi sus">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <nav class="navMenu">
@@ -152,9 +169,10 @@
     <main id="start">
         <div class="content" id="intro">
             <section id="intro-content">
-                <h1>Școala de Arte Criuleni</h1>
-                <p><q>Arta formează oameni buni și sufletul uman</q> <span>- Piotr I. Ceaikovski</span></p>
-                <div class="intro-button">
+                <h1 class="reveal">Școala de Arte Criuleni</h1>
+                <p class="reveal" data-reveal-delay="50"><q>Arta formează oameni buni și sufletul uman</q> <span>- Piotr
+                        I. Ceaikovski</span></p>
+                <div class="intro-button reveal" data-reveal-delay="100">
                     <hr>
                     <a href="pages/despre.html">Mai mult</a>
                     <hr>
@@ -206,7 +224,7 @@
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
                                 <img src="images/primaria.png" alt="Primăria orașului Criuleni"
-                                    class="partener-logo-img">
+                                    class="partener-logo-img" loading="lazy">
                             </div>
                             <h3 class="partener-name">Primăria orașului Criuleni</h3>
                             <p class="partener-desc">Sprijin local și promovare culturală în comunitate</p>
@@ -215,7 +233,7 @@
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
                                 <img src="images/consiliul.png" alt="Consiliul Raional Criuleni"
-                                    class="partener-logo-img">
+                                    class="partener-logo-img" loading="lazy">
                             </div>
                             <h3 class="partener-name">Consiliul Raional Criuleni</h3>
                             <p class="partener-desc">Coordonare și finanțare pentru proiecte educative</p>
@@ -223,7 +241,8 @@
 
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
-                                <img src="images/guvern.png" alt="Ministerul Culturii" class="partener-logo-img">
+                                <img src="images/guvern.png" alt="Ministerul Culturii" class="partener-logo-img"
+                                    loading="lazy">
                             </div>
                             <h3 class="partener-name">Ministerul Culturii</h3>
                             <p class="partener-desc">Suport în dezvoltarea curricumului și certificare profesională</p>
@@ -232,7 +251,7 @@
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
                                 <img src="images/academia.png" alt="Academia de Muzică, Teatru și Arte Plastice"
-                                    class="partener-logo-img">
+                                    class="partener-logo-img" loading="lazy">
                             </div>
                             <h3 class="partener-name">Academia de Muzică, Teatru și Arte Plastice</h3>
                             <p class="partener-desc">Partener cultural cu experiență în educație artistică</p>
@@ -241,17 +260,18 @@
                         <div class="partener-card">
                             <div class="partener-logo-wrapper">
                                 <img src="images/muzeul-national.png"
-                                    alt="Muzeul Național de Etnografie și Istorie Naturală" class="partener-logo-img">
+                                    alt="Muzeul Național de Etnografie și Istorie Naturală" class="partener-logo-img"
+                                    loading="lazy">
                             </div>
                             <h3 class="partener-name">Muzeul Național de Etnografie și Istorie Naturală</h3>
                             <p class="partener-desc">Colaborare pentru evenimente și proiecte culturale</p>
                         </div>
                     </div>
                     <button class="carousel-btn carousel-prev" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
                     </button>
                     <button class="carousel-btn carousel-next" aria-label="Următorul">
-                        <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </div>
 
@@ -264,7 +284,7 @@
         <div class="footer-top">
             <div class="footer-logo-box">
                 <a href="index.html">
-                    <img class="footer-logo" src="images/logo.png" alt="Logo Școala de Arte Criuleni">
+                    <img class="footer-logo" src="images/logo.png" alt="Logo Școala de Arte Criuleni" loading="lazy">
                 </a>
             </div>
 
@@ -282,18 +302,21 @@
                 <h4>Urmărește-ne</h4>
                 <div class="social-links">
                     <span class="instagram-box">
-                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank"
+                            aria-label="Vizitează pagina noastră de Instagram (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="facebook-box">
-                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank">
-                            <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank"
+                            aria-label="Vizitează pagina noastră de Facebook (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="youtube-box">
-                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank">
-                            <i class="fa-brands fa-youtube"></i>
+                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank"
+                            aria-label="Vizitează canalul nostru de YouTube (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
                     </span>
                 </div>
@@ -311,8 +334,9 @@
                     </h2>
                     <span class="footer-span">Republica Moldova, or. Criuleni, str. 31 August, 104</span>
                 </div>
-                <a href="resources/regulament-scoli-arte.pdf" target="_blank">
-                    <span><i class="fa-regular fa-file"></i></span>
+                <a href="resources/regulament-scoli-arte.pdf" target="_blank"
+                    aria-label="Acte conform cărora activează școala (se deschide într-o filă nouă)">
+                    <span><i class="fa-regular fa-file" aria-hidden="true"></i></span>
                     <p>Acte conform cărora activează școala</p>
                 </a>
             </div>

@@ -1,6 +1,15 @@
 // Lista de evenimente pentru paginare și afișare
 window.EVENTS_DATA = [
   {
+    id: "concert-bilant-2025",
+    title: "Concertul de bilanț 2025",
+    image: "../images/news-img/concert-bilant25.jpg",
+    alt: "Concertul de bilanț 2025",
+    description: "Școala de Arte Criuleni vă invită la Concertul de bilanț.",
+    date: "2025-05-26",
+    link: "../link-pages/concert-bilant-2025.html"
+  },
+  {
     id: "masterclass-artmartisor-2025",
     title: "Masterclass de pictură",
     image: "../images/news-img/masterclass-m25.jpg",
@@ -75,7 +84,7 @@ window.EVENTS_DATA = [
   {
     id: "artmartisor",
     title: "Proiectul \"ArtMărțișor\" 2024",
-    image: "../images/news-img/ArtMărțișor.jpg",
+    image: "../images/news-img/ArtMartisor.jpg",
     alt: "ArtMărțișor",
     description: "Expoziție cu creații ale elevilor dedicate primăverii.",
     date: "2024-04-15",

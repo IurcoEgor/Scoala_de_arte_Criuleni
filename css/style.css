@@ -91,6 +91,10 @@ section {
     min-height: 50vh;
 }
 
+.content section:only-of-type {
+    border-bottom: none;
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -1747,6 +1751,72 @@ hr {
     flex: 1;
 }
 
+/* Status Badge pentru Evenimente */
+.event-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.news-card:hover .event-status {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status-past {
+    background-color: #394694;
+}
+
+.status-upcoming {
+    background-color: #24a756;
+}
+
+.status-now {
+    background-color: #ff4757;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
+    animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Asigurăm poziționarea relativă a link-ului imaginii pentru a plasa badge-ul corect */
+.news-card>a {
+    position: relative;
+    display: block;
+}
+
+.news-body {
+    padding: 4px 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .news-title {
     font-size: 1.2rem;
     font-weight: 700;
@@ -1867,7 +1937,7 @@ hr {
 
 .calendar-header h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.12rem;
     font-weight: 700;
     color: #394694;
     text-align: center;
@@ -1880,10 +1950,10 @@ hr {
     color: #8fa9fd;
     font-size: 1rem;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1908,16 +1978,17 @@ hr {
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    row-gap: 3px;
+    row-gap: 1.2px;
 }
 
 .calendar-day {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 32px;
-    border-radius: 50%;
+    justify-content: center;
+    height: 34px;
+    border-radius: 0;
+    padding-bottom: 4px;
     font-size: 0.9rem;
     position: relative;
     cursor: default;
@@ -1926,19 +1997,43 @@ hr {
 
 .calendar-day.other-month {
     color: #ccc;
-    pointer-events: none;
+    cursor: pointer;
+}
+
+.calendar-day.other-month .event-bar {
+    opacity: 0.4;
 }
 
 .calendar-day.today span {
     background-color: #c9d6ff;
     color: #1c3370;
     font-weight: 700;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Tooltip specific pentru ziua de Azi */
+.calendar-day.today::after {
+    content: "Azi";
+    position: absolute;
+    background: rgb(28, 51, 112, 0.75);
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.calendar-day.today:hover::after {
+    opacity: 1;
 }
 
 .calendar-day.has-event {
@@ -1947,36 +2042,70 @@ hr {
 
 .calendar-day.has-event:hover:not(.other-month) {
     background-color: rgba(143, 169, 253, 0.1);
+    border-radius: 8px;
 }
 
 .calendar-day .dots-container {
     position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 23px;
+    left: 0;
     display: flex;
-    gap: 3px;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
 }
 
-.calendar-day .event-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-}
-
-.event-dot.past {
-    background-color: #8fa9fd;
-}
-
-.event-dot.upcoming {
+/* Linii continue (bars) în loc de puncte */
+.event-bar {
+    height: 4px;
+    width: 100%;
     background-color: #24a756;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+}
+
+/* Forme pentru capetele liniilor */
+.event-bar.start {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-left: 4px;
+    width: calc(100% - 4px);
+}
+
+.event-bar.end {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-right: 4px;
+    width: calc(100% - 4px);
+}
+
+.event-bar.start.end {
+    border-radius: 8px;
+    width: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.event-bar.past {
+    background-color: #394694;
+}
+
+.event-bar.upcoming {
+    background-color: #24a756;
+}
+
+.event-bar.now {
+    background-color: #ff4757;
 }
 
 .calendar-legend {
     display: flex;
     justify-content: space-evenly;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 16px;
     padding-top: 15px;
     border-top: 1px solid #eee;
     font-size: 0.8rem;
@@ -1996,7 +2125,7 @@ hr {
 }
 
 .legend-item .dot.past {
-    background-color: #8fa9fd;
+    background-color: #394694;
 }
 
 .legend-item .dot.upcoming {
@@ -2005,6 +2134,11 @@ hr {
 
 .legend-item .dot.today {
     background-color: #c9d6ff;
+}
+
+/* Stil specific pentru Acum in legenda daca difera de Azi */
+.legend-item .dot.now {
+    background-color: #ff4757;
 }
 
 .event-tooltip {
@@ -2026,6 +2160,17 @@ hr {
     pointer-events: none;
 }
 
+/* Starea activă (fixată) a tooltip-ului */
+.event-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    top: 100%;
+    bottom: auto;
+    margin-top: 8px;
+    z-index: 101;
+}
+
 .event-tooltip::after {
     content: '';
     position: absolute;
@@ -2035,6 +2180,31 @@ hr {
     border-width: 5px;
     border-style: solid;
     border-color: #394694 transparent transparent transparent;
+}
+
+/* Săgeata pentru tooltip-ul activ (îndreptată în sus) */
+.event-tooltip.active::after {
+    bottom: 100%;
+    top: auto;
+    border-color: transparent transparent #394694 transparent;
+}
+
+/* Link-urile din tooltip */
+.tooltip-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.2s;
+}
+
+.tooltip-link:last-child {
+    border-bottom: none;
+}
+
+.tooltip-link:hover {
+    color: #8fa9fd;
 }
 
 .calendar-day.has-event:hover .event-tooltip {
@@ -2089,9 +2259,7 @@ hr {
 
     .calendar-widget {
         position: static;
-        /* Eliminăm poziționarea 'sticky' pe mobil */
         min-width: unset;
-        /* Permitem calendarului să ocupe lățimea disponibilă */
     }
 
     .news-card {
@@ -2295,8 +2463,20 @@ td {
     justify-content: flex-end;
 }
 
-.loupe {
-    width: 30%;
+.loupe-icon {
+    font-size: 2rem;
+    color: #394694;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.loupe-icon:hover {
+    background: #394694;
+    color: #fff;
+    transform: scale(1.1);
 }
 
 /*  */
@@ -2310,7 +2490,7 @@ td {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 30px 40px;
-    margin: 0 auto 35px auto;
+    margin: 35px auto 15px auto;
     width: 88%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-left: 5px solid #8fa9fd;
@@ -2326,7 +2506,7 @@ td {
 }
 
 .admitere-text p {
-    color: #ffffff;
+    color: #1c3370;
     font-size: 1.1rem;
     line-height: 1.7;
     margin: 0;
@@ -2347,7 +2527,7 @@ td {
     top: 50%;
     transform: translateY(-50%) rotate(-15deg);
     font-size: 6rem;
-    color: rgba(255, 255, 255, 0.1);
+    color: rgb(28, 51, 112, 0.1);
     z-index: 1;
     pointer-events: none;
 }

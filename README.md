@@ -73,8 +73,12 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
 │   ├── profesori.html        # Pagina dedicată cadrelor didactice
 │   ├── istoric.html          # Pagina cu istoricul instituției
 │   └── ...                   # Pagini individuale pentru fiecare știre/eveniment
-├── images/                   # Toate resursele grafice (logo, fundaluri, imagini)
-│   └── ...
+├── images/                   
+│   ├── accordion/            # Imagini utilizate în secțiunea de specializări
+│   │   └── ...
+│   ├── news-img/             # Imagini pentru secțiunea de noutăți
+│   │   └── ...
+│   └── ...                   # Toate resursele grafice (logo, fundaluri, imagini)
 └── resources/                # Documente (ex: PDF-uri)
     └── ...
 ```

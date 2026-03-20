@@ -4,6 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Află istoria, misiunea, viziunea și echipa de profesori de la Școala de Arte Criuleni. Cunoaște-ne mai bine și vezi absolvenții noștri de succes.">
+    <meta name="keywords"
+        content="despre Școala de Arte Criuleni, istoric, misiune, profesori, cadre didactice, absolvenți, Dimitrașco Natalia">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/pages/despre.html">
+    <meta property="og:title" content="Despre noi | Școala de Arte Criuleni">
+    <meta property="og:description"
+        content="Află istoria, misiunea și viziunea școlii noastre. Cunoaște cadrele didactice dedicate care inspiră și formează tinerele talente.">
+    <meta property="og:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/pages/despre.html">
+    <meta property="twitter:title" content="Despre noi | Școala de Arte Criuleni">
+    <meta property="twitter:description"
+        content="Află istoria, misiunea și viziunea școlii noastre. Cunoaște cadrele didactice dedicate care inspiră și formează tinerele talente.">
+    <meta property="twitter:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,11 +40,11 @@
 
 <body>
 
-    <button id="scrollTopBtn" title="Sus">
-        <i class="fa-solid fa-arrow-up"></i>
+    <button id="scrollTopBtn" title="Sus" aria-label="Mergi sus">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <nav class="navMenu">
+    <nav class="navMenu" aria-label="Navigație principală mobilă">
         <ul>
             <li class="navList active">
                 <a href="despre.html">
@@ -76,10 +96,10 @@
                 <img class="logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
             </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navigație principală desktop">
 
                 <div class="dropdown-big">
-                    <a href="../index.html">Homepage</a>
+                    <a href="../index.html" aria-haspopup="true" aria-expanded="false">Homepage</a>
                     <div class="dropdown-content-big">
                         <div class="dropdown-element">
                             <h5>Despre noi</h5>
@@ -94,7 +114,7 @@
                         <div class="dropdown-element">
                             <h5>Specializări</h5>
                             <div>
-                                <a href="specializari.html#muzica">Muzica</a>
+                                <a href="specializari.html#muzica">Muzică</a>
                                 <a href="specializari.html#creatie">Creație</a>
                                 <a href="specializari.html#curricula">Curricula</a>
                                 <a href="specializari.html#formular">Formular de înscriere</a>
@@ -113,7 +133,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="despre.html">Despre noi</a>
+                    <a href="despre.html" aria-haspopup="true" aria-expanded="false">Despre noi</a>
                     <div class="dropdown-content">
                         <a href="despre.html#istoric">Istoric</a>
                         <a href="despre.html#viziunea">Viziunea & Misiunea Școlii</a>
@@ -123,9 +143,9 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="specializari.html">Specializări</a>
+                    <a href="specializari.html" aria-haspopup="true" aria-expanded="false">Specializări</a>
                     <div class="dropdown-content">
-                        <a href="specializari.html#muzica">Muzica</a>
+                        <a href="specializari.html#muzica">Muzică</a>
                         <a href="specializari.html#creatie">Creație</a>
                         <a href="specializari.html#curricula">Curricula</a>
                         <a href="specializari.html#formular">Formular de înscriere</a>
@@ -133,7 +153,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="activitati.html">Activități</a>
+                    <a href="activitati.html" aria-haspopup="true" aria-expanded="false">Activități</a>
                     <div class="dropdown-content">
                         <a href="activitati.html">Prima pagină</a>
                         <hr>
@@ -160,14 +180,15 @@
                 <div class="row">
                     <img class="img-istoric" src="../images/istoricul.jpg" alt="Școala de Arte Criuleni - Istoric">
                     <p>
-                        Instituită în 1969 Școala de Muzică cu 67 de elevi înmatriculați la specialități de pian,
-                        vioară, acordeon și instrumente aerofone, în anul 1995 instituția primește statut de Școală de
-                        Arte prin contopire cu școala de pictură din orașul Criuleni. În aproape 55 de ani de activitate
+                        Instituită în 1969 ca Școală de Muzică, cu 67 de elevi înmatriculați la specialități de pian,
+                        vioară, acordeon și instrumente aerofone, în anul 1995 instituția a primit statutul de Școală de
+                        Arte prin contopirea cu Școala de Pictură din orașul Criuleni. În aproape 55 de ani de activitate,
                         instituția a oferit cunoștințe în domeniul artelor copiilor din oraș și regiune, având și
-                        filiale. La moment în Școala de Arte Criuleni învață 194 elevi la cele două compartimente Muzică
+                        filiale. În prezent, în Școala de Arte Criuleni învață 194 de elevi la cele două compartimente: Muzică
                         și Creație.
                     </p>
-                    <a class="mai-mult" href="../link-pages/istoricul.html">Mai mult</a>
+                    <a class="mai-mult" href="../link-pages/istoricul.html"
+                        aria-label="Citește mai mult despre istoricul școlii">Mai mult</a>
                 </div>
             </section>
 
@@ -188,11 +209,11 @@
                 <h2 class="h2-left">Misiunea școlii</h2>
                 <p>
                     Realizarea unui program de dezvoltare a competențelor artistice la elevii din or. Criuleni și
-                    regiune, pregătirea lor preprofesională în domeniul artelor prin implimentarea politicilor
-                    educaționale specifice, oferirea unui produs extracurricular de calitate, diversificat, actual și
-                    motivant, desfășurat în climatul creativ și prietenos actorilor participanți ai actului educational,
-                    îndreptat spre dezvoltare multilaterală a personalității copilului și educarea tinerei generații în
-                    spiritul promovării și respectării valorilor europeene fundamentale, general-umane și naționale.
+                    regiune, pregătirea lor preprofesională în domeniul artelor prin implementarea politicilor
+                    educaționale specifice, oferirea unui serviciu extracurricular de calitate, diversificat, actual și
+                    motivant, desfășurat într-un climat creativ și prietenos actorilor participanți la actul educațional,
+                    îndreptat spre dezvoltarea multilaterală a personalității copilului și educarea tinerei generații în
+                    spiritul promovării și respectării valorilor europene fundamentale, general-umane și naționale.
                 </p>
             </section>
 
@@ -202,11 +223,11 @@
                 <h2 class="h2-left">Cadre didactice</h2>
                 <p>
                     Studii academice de bază în domeniul artelor sunt oferite de către 21 de cadre
-                    didactice, dintre care 2 sunt tinerii specialiști, iar 6 sunt de vârstă pensionară, 18 sunt
-                    angajați de bază, iar 2 prin cumul extern.
+                    didactice, dintre care 2 sunt tineri specialiști, iar 6 sunt de vârstă pensionară; 18 sunt
+                    angajați titulari, iar 2 prin cumul extern.
                 </p>
                 <h3 class="centered">
-                    <span class="h-smaller">80% din profesori dețin următoarele grade didactice:</span>
+                    <span class="h-smaller">80% dintre profesori dețin următoarele grade didactice:</span>
                 </h3>
                 <ul>
                     <li class="centered">15 au gradul didactic II </li>
@@ -230,23 +251,26 @@
 
                 <p>
                     În ultimii 5 ani 4 persoane au absolvit ciclul de Licență și 3 persoane, ciclul de
-                    Master în domeniul educației. 9 profesori sunt absolvenții Școlii de Arte Criuleni în
+                    Master în domeniul educației. 9 profesori sunt absolvenți ai Școlii de Arte Criuleni în
                     diferiți ani.
                 </p>
 
                 <article class="prof-card">
                     <div class="prof-card-inner">
                         <div class="prof-image">
-                            <img src="../images/director.jpg" alt="Dimitrașco Natalia, Directorul Școlii de Arte Criuleni">
+                            <img src="../images/director.jpg"
+                                alt="Dimitrașco Natalia, Directorul Școlii de Arte Criuleni" loading="lazy">
                         </div>
                         <div class="prof-info">
                             <h3>Dimitrașco Natalia</h3>
                             <p class="prof-role">Director, grad managerial unu</p>
                             <div class="prof-meta">
-                                <p><strong>Studii:</strong> Studii superioare (pedagogie/culturologie), Universitatea de Stat din Tiraspol, Academia de Muzică, Teatru și Arte Plastice</p>
+                                <p><strong>Studii:</strong> Studii superioare (pedagogie/culturologie), Universitatea de
+                                    Stat din Tiraspol, Academia de Muzică, Teatru și Arte Plastice</p>
                                 <p><strong>Stagiu:</strong> 30 ani</p>
                             </div>
-                            <p class="prof-desc">Profesoară de artă teatrală, grad didactic superior. Conducătoarea Studioului artistic ”Micul Prinț”.</p>
+                            <p class="prof-desc">Profesoară de artă teatrală, grad didactic superior. Conducătoarea
+                                Studioului artistic ”Micul Prinț”.</p>
                         </div>
                     </div>
                 </article>
@@ -259,27 +283,27 @@
             <section>
                 <h2 class="h2-left">Mândria școlii/absolvenții</h2>
                 <p>
-                    Cinci colective artistice formate de profesori în școală duc faima Criuleniului evoluînd pe scenele
-                    locale, raionale, pe platourile festivalurilor şi concursuri naţionale şi internaţionale. "Victoria
+                    Cinci colective artistice formate de profesori în școală duc faima Criuleniului evoluând pe scenele
+                    locale și raionale, pe platourile festivalurilor şi concursurilor naţionale şi internaţionale: "Victoria
                     junior", "Crio dance", "KorAll", "Micul prinț" și ansamblul de muzică populară.
                 </p>
 
                 <p>
-                    Școală de arte Criuleni se mândrește nespus cu realizările discipoilor săi, în deosebi
-                    absolvenților, care au continuat drumul lor în arte profesionist:
+                    Școala de Arte Criuleni se mândrește nespus cu realizările discipolilor săi, îndeosebi ale
+                    absolvenților care și-au continuat drumul profesionist în arte:
                 </p>
                 <ul>
                     <li>
-                        Ion Jabinschi, prodecanul facultăţii "Facultatea Arte Plastice, Decorative şi Design" -
-                        "Academia de Muzică, Teatru, Arte Plastice", lectorii academiei, Igor Caprian, Tatiana
+                        Ion Jabinschi, prodecanul "Facultății Arte Plastice, Decorative şi Design" -
+                        "Academia de Muzică, Teatru și Arte Plastice"; lectori ai academiei: Igor Caprian, Tatiana
                         Jabinschi;
                     </li>
                     <li>
-                        Irina Nicolai - compozitoare, profesoară de muzică la Şcola Primară Criuleni, autoarea imnului
+                        Irina Nicolai - compozitoare, profesoară de muzică la Şcoala Primară Criuleni, autoarea imnului
                         or. Criuleni;
                     </li>
                     <li>
-                        Andrei Măgurean, fost director al Casei de cultură şi mentorul colectivului de
+                        Andrei Măgurean, fost director al Casei de Cultură şi mentorul colectivului de
                         fluierişti "Izvoarele din Onițcani", Andrei Bordeian actualul director aceleiași instituții și
                         conducătorul colectivului vocal de copii din s. Onițcani;
                     </li>
@@ -292,22 +316,22 @@
                         calitate de dirijor şi acompaniator;
                     </li>
                     <li>
-                        Igor Burciu - profesor de acordeon la școala de muzică rl Sîngerei;
+                        Igor Burciu - profesor de acordeon la școala de muzică din r-nul Sângerei;
                     </li>
                     <li>
-                        Gherciu Ion - conducătorul colectivului de dans a Centrului Raional de Cultură Criuleni;
+                        Gherciu Ion - conducătorul colectivului de dans al Centrului Raional de Cultură Criuleni;
                     </li>
                 </ul>
 
                 <p>
                     Mai fac studii în diferite instituții de învățământ artistic superior absolvenții Școlii de Arte
                     Criuleni: <br>
-                    Mihai Nenița - Conservatorul din St. Petersburg, Federația Rusă; <br>
+                    Mihai Nenița - Conservatorul din Sankt Petersburg, Federația Rusă; <br>
                     Vlad Stahi - Universitatea Națională de Arte "George Enescu" din Iași, România; <br>
                     Doina Stoica și Ion Gârneț - Academia de Muzică, Teatru și Arte Plastice din Chișinău.
                 </p>
                 <p>
-                    În ultimii 25 de ani certificate de absolvire a școlii de Arte Criuleni au primit 1246 de tineri.
+                    În ultimii 25 de ani, certificate de absolvire ale Școlii de Arte Criuleni au primit 1246 de tineri.
                 </p>
             </section>
 
@@ -319,13 +343,13 @@
         <div class="footer-top">
             <div class="footer-logo-box">
                 <a href="../index.html">
-                    <img class="footer-logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
+                    <img class="footer-logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni" loading="lazy">
                 </a>
             </div>
 
             <div class="footer-links">
 
-                <div class="footer-nav">
+                <div class="footer-nav" aria-label="Navigație subsol">
                     <h4 class="footer-h4"><a href="despre.html">Despre Noi</a></h4>
                     <h4 class="footer-h4"><a href="specializari.html">Specializări</a></h4>
                     <h4 class="footer-h4"><a href="activitati.html">Activități</a></h4>
@@ -337,18 +361,21 @@
                 <h4>Urmărește-ne</h4>
                 <div class="social-links">
                     <span class="instagram-box">
-                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank"
+                            aria-label="Vizitează pagina noastră de Instagram (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="facebook-box">
-                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank">
-                            <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank"
+                            aria-label="Vizitează pagina noastră de Facebook (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="youtube-box">
-                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank">
-                            <i class="fa-brands fa-youtube"></i>
+                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank"
+                            aria-label="Vizitează canalul nostru de YouTube (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
                     </span>
                 </div>
@@ -365,8 +392,9 @@
                     </h2>
                     <span class="footer-span">Republica Moldova, or. Criuleni, str. 31 August, 104</span>
                 </div>
-                <a href="../resources/regulament-scoli-arte.pdf" target="_blank">
-                    <span><i class="fa-regular fa-file"></i></span>
+                <a href="../resources/regulament-scoli-arte.pdf" target="_blank"
+                    aria-label="Acte conform cărora activează școala (se deschide într-o filă nouă)">
+                    <span><i class="fa-regular fa-file" aria-hidden="true"></i></span>
                     <p>Acte conform cărora activează școala</p>
                 </a>
             </div>

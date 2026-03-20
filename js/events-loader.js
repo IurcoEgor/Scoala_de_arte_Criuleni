@@ -33,12 +33,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     //   </div>
     // </div>
 
+    // Logică pentru status
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const eventStart = new Date(ev.date);
+    // Dacă nu există endDate, considerăm că evenimentul e doar o zi
+    const eventEnd = ev.endDate ? new Date(ev.endDate) : new Date(ev.date);
+    eventEnd.setHours(23, 59, 59, 999); // Sfârșitul zilei
+
+    let statusText = '';
+    let statusClass = '';
+
+    if (eventEnd < today) {
+      statusText = 'Trecut';
+      statusClass = 'status-past';
+    } else if (eventStart > today) {
+      statusText = 'Planificat';
+      statusClass = 'status-upcoming';
+    } else {
+      statusText = 'Acum';
+      statusClass = 'status-now';
+    }
+
     const card = document.createElement('div');
     card.className = 'news-card';
 
     // Imaginea cu link
     const aImg = document.createElement('a');
     aImg.href = ev.link;
+
+    // Adăugare Badge Status
+    const badge = document.createElement('span');
+    badge.className = `event-status ${statusClass}`;
+    badge.textContent = statusText;
+    aImg.appendChild(badge);
+
     const img = document.createElement('img');
     img.src = ev.image;
     img.alt = ev.alt || ev.title;
@@ -76,7 +106,17 @@ document.addEventListener('DOMContentLoaded', async () => {
       time.setAttribute('datetime', ev.date);
       const dt = new Date(ev.date);
       // Format identic cu staticul: 31 octombrie 2023
-      time.textContent = dt.toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+      let dateString = dt.toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+
+      // Adăugare data de sfârșit dacă există și diferă
+      if (ev.endDate) {
+        const dtEnd = new Date(ev.endDate);
+        if (dtEnd.getTime() !== dt.getTime()) {
+          const endDateString = dtEnd.toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+          dateString += ` - ${endDateString}`;
+        }
+      }
+      time.textContent = dateString;
     }
     body.appendChild(time);
 

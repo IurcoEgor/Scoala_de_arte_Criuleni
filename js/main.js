@@ -318,14 +318,45 @@ document.addEventListener("DOMContentLoaded", function () {
             const imagePath = sanitize(event.image);
             const linkPath = sanitize(event.link);
 
+            // Logică Status Badge (identică cu events-loader.js)
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const eventStart = new Date(event.date);
+            const eventEnd = event.endDate ? new Date(event.endDate) : new Date(event.date);
+            eventEnd.setHours(23, 59, 59, 999);
+
+            let statusText = '';
+            let statusClass = '';
+
+            if (eventEnd < today) {
+                statusText = 'Trecut';
+                statusClass = 'status-past';
+            } else if (eventStart > today) {
+                statusText = 'Planificat';
+                statusClass = 'status-upcoming';
+            } else {
+                statusText = 'Acum';
+                statusClass = 'status-now';
+            }
+
             // Construiește descrierea, dacă există, pentru a fi identic cu pagina de activități
             const descriptionHtml = event.description ? `<p class="news-desc">${event.description}</p>` : '';
 
             // Formatează data pentru a fi identică cu cea din activitati.html
-            const formattedDate = new Date(event.date).toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+            let formattedDate = new Date(event.date).toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+
+            // Adaugă data de sfârșit dacă există
+            if (event.endDate) {
+                const endDateObj = new Date(event.endDate);
+                if (endDateObj.getTime() !== new Date(event.date).getTime()) {
+                    const endFormatted = endDateObj.toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
+                    formattedDate += ` - ${endFormatted}`;
+                }
+            }
 
             card.innerHTML = `
                 <a href="${linkPath}" title="${event.title}">
+                    <span class="event-status ${statusClass}">${statusText}</span>
                     <img src="${imagePath}" alt="${event.alt || event.title}" class="news-img" loading="lazy" height="175">
                 </a>
                 <div class="news-body">

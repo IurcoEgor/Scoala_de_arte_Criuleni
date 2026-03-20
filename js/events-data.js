@@ -1,12 +1,48 @@
 // Lista de evenimente pentru paginare și afișare
 window.EVENTS_DATA = [
   {
+    id: "eterna-dragoste",
+    title: "Spectacol \"Eterna Dragoste\"",
+    image: "../images/news-img/eterna-dragoste.jpg",
+    alt: "Spectacol \"Eterna Dragoste\"",
+    description: "Vă așteptăm cu drag la spectacolul realizat de elevii noștri.",
+    date: "2026-02-27",
+    link: "../link-pages/eterna-dragoste.html"
+  },
+  {
+    id: "minunile-artei-2025",
+    title: "Festivalul \"Minunile Artei\" 2025",
+    image: "../images/news-img/minun-artei-2025b.jpg",
+    alt: "Festivalul \"Minunile Artei\" 2025",
+    description: "Târg de iarnă și spectacol de caritate pentru copii.",
+    date: "2025-12-24",
+    link: "../link-pages/minun-artei-2025.html"
+  },
+  {
+    id: "piano-recital-2025",
+    title: "Ziua Internațională a Muzicii",
+    image: "../images/news-img/piano-recital25.jpg",
+    alt: "Ziua Internațională a Muzicii 2025",
+    description: "Sărbătorim Ziua Internațională a Muzicii alături de absolventul școlii noastre.",
+    date: "2025-10-02",
+    link: "../link-pages/piano-recital-2025.html"
+  },
+  {
+    id: "simpozion-pedagogic-2025",
+    title: "Simpozionul Pedagogic 2025",
+    image: "../images/news-img/simpozion-pedagog25.jpg",
+    alt: "Simpozionul Pedagogic 2025",
+    description: "Vă invităm la conferința de totalizare a rezultatelor Simpozionului.",
+    date: "2025-06-10",
+    link: "../link-pages/simpozion-pedagogic-2025.html"
+  },
+  {
     id: "concert-bilant-2025",
     title: "Concertul de bilanț 2025",
     image: "../images/news-img/concert-bilant25.jpg",
     alt: "Concertul de bilanț 2025",
     description: "Școala de Arte Criuleni vă invită la Concertul de bilanț.",
-    date: "2025-05-26",
+    date: "2025-05-28",
     link: "../link-pages/concert-bilant-2025.html"
   },
   {
@@ -24,7 +60,7 @@ window.EVENTS_DATA = [
     image: "../images/news-img/sageata-albastra.jpg",
     alt: "Săgeata Albastră",
     description: "Spectacolul de caritate pentru copii 6-12 ani și părinți.",
-    date: "2024-12-26",
+    date: "2024-12-27",
     link: "../link-pages/sageata-albastra.html"
   },
   {
@@ -33,7 +69,7 @@ window.EVENTS_DATA = [
     image: "../images/news-img/voicesplus2.jpg",
     alt: "VOICESplus",
     description: "Proiect destinat școlilor de muzică și artă din Moldova.",
-    date: "2024-11-14",
+    date: "2024-11-18",
     link: "../link-pages/voicesplus2.html"
   },
   {
@@ -42,7 +78,8 @@ window.EVENTS_DATA = [
     image: "../images/news-img/usi-dechise24.jpg",
     alt: "Zilele Ușilor Deschise",
     description: "Vizitează școala, întâlnește profesorii și înscrie-te la cursuri.",
-    date: "2024-09-03",
+    date: "2024-09-04",
+    endDate: "2024-09-06",
     link: "../link-pages/usile-deschise24.html"
   },
   {
@@ -60,8 +97,8 @@ window.EVENTS_DATA = [
     image: "../images/news-img/armonii-apus.jpg",
     alt: "Armonii la Apus",
     description: "Concertul anual 'Armonii la Apus' - momente muzicale speciale.",
-    date: "2024-06-26",
-    link: "../link-pages/armonii-apus.html"
+    date: "2024-06-28",
+    link: "../link-pages/armonii-apus24.html"
   },
   {
     id: "parada-talent",
@@ -69,7 +106,7 @@ window.EVENTS_DATA = [
     image: "../images/news-img/parada-talent24.jpg",
     alt: "Parada Talentelor",
     description: "Elevii și formațiile au prezentat talente variate pe scenă.",
-    date: "2024-05-30",
+    date: "2024-06-01",
     link: "../link-pages/parada-talent.html"
   },
   {
@@ -78,7 +115,8 @@ window.EVENTS_DATA = [
     image: "../images/news-img/primavera-2024.jpg",
     alt: "Primavera",
     description: "Festival de primăvară cu expoziții și concerte studențești.",
-    date: "2024-04-29",
+    date: "2024-04-26",
+    endDate: "2024-04-28",
     link: "../link-pages/primavera2024.html"
   },
   {
@@ -87,7 +125,8 @@ window.EVENTS_DATA = [
     image: "../images/news-img/ArtMartisor.jpg",
     alt: "ArtMărțișor",
     description: "Expoziție cu creații ale elevilor dedicate primăverii.",
-    date: "2024-04-15",
+    date: "2024-02-20",
+    endDate: "2024-04-15",
     link: "../link-pages/artmartisor.html"
   },
   {
@@ -97,6 +136,7 @@ window.EVENTS_DATA = [
     alt: "Săptămâna Culturii",
     description: "Evenimente culturale și ateliere în școală.",
     date: "2024-01-15",
+    endDate: "2024-01-19",
     link: "../link-pages/saptamana-culturii.html"
   },
   {
@@ -105,7 +145,7 @@ window.EVENTS_DATA = [
     image: "../images/news-img/craciun23.jpg",
     alt: "Crăciun 2023",
     description: "Spectacol de Crăciun cu elevii școlii.",
-    date: "2023-12-23",
+    date: "2023-12-24",
     link: "../link-pages/craciun23.html"
   },
   {
@@ -114,7 +154,8 @@ window.EVENTS_DATA = [
     image: "../images/news-img/minun-artei.jpg",
     alt: "Minunile Artei",
     description: "Expoziție de lucrări realizate de elevi.",
-    date: "2023-10-31",
+    date: "2023-09-19",
+    endDate: "2023-10-31",
     link: "../link-pages/minun-artei.html"
   },
   {

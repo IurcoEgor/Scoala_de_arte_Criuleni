@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Găsește adresa, numărul de telefon, harta și formularul de contact pentru Școala de Arte Criuleni. Suntem aici pentru a răspunde întrebărilor tale.">
+    <meta name="keywords" content="contact Școala de Arte Criuleni, adresă, telefon, hartă, email, program, Criuleni">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/pages/contacte.html">
+    <meta property="og:title" content="Contacte | Școala de Arte Criuleni">
+    <meta property="og:description"
+        content="Date de contact, adresă, telefon și formular pentru mesaje. Suntem aici să răspundem întrebărilor tale despre înscriere și activități.">
+    <meta property="og:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/pages/contacte.html">
+    <meta property="twitter:title" content="Contacte | Școala de Arte Criuleni">
+    <meta property="twitter:description"
+        content="Date de contact, adresă, telefon și formular pentru mesaje. Suntem aici să răspundem întrebărilor tale despre înscriere și activități.">
+    <meta property="twitter:image" content="https://iurcoegor.github.io/Scoala_de_arte_Criuleni/images/scoala-bg.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,11 +38,11 @@
 
 <body>
 
-    <button id="scrollTopBtn" title="Sus">
-        <i class="fa-solid fa-arrow-up"></i>
+    <button id="scrollTopBtn" title="Sus" aria-label="Mergi sus">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
 
-    <nav class="navMenu">
+    <nav class="navMenu" aria-label="Navigație principală mobilă">
         <ul>
             <li class="navList">
                 <a href="despre.html">
@@ -75,10 +94,10 @@
                 <img class="logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
             </a>
 
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Navigație principală desktop">
 
                 <div class="dropdown-big">
-                    <a href="../index.html">Homepage</a>
+                    <a href="../index.html" aria-haspopup="true" aria-expanded="false">Homepage</a>
                     <div class="dropdown-content-big">
                         <div class="dropdown-element">
                             <h5>Despre noi</h5>
@@ -93,7 +112,7 @@
                         <div class="dropdown-element">
                             <h5>Specializări</h5>
                             <div>
-                                <a href="specializari.html#muzica">Muzica</a>
+                                <a href="specializari.html#muzica">Muzică</a>
                                 <a href="specializari.html#creatie">Creație</a>
                                 <a href="specializari.html#curricula">Curricula</a>
                                 <a href="specializari.html#formular">Formular de înscriere</a>
@@ -112,7 +131,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="despre.html">Despre noi</a>
+                    <a href="despre.html" aria-haspopup="true" aria-expanded="false">Despre noi</a>
                     <div class="dropdown-content">
                         <a href="despre.html#istoric">Istoric</a>
                         <a href="despre.html#viziunea">Viziunea & Misiunea Școlii</a>
@@ -122,9 +141,9 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="specializari.html">Specializări</a>
+                    <a href="specializari.html" aria-haspopup="true" aria-expanded="false">Specializări</a>
                     <div class="dropdown-content">
-                        <a href="specializari.html#muzica">Muzica</a>
+                        <a href="specializari.html#muzica">Muzică</a>
                         <a href="specializari.html#creatie">Creație</a>
                         <a href="specializari.html#curricula">Curricula</a>
                         <a href="specializari.html#formular">Formular de înscriere</a>
@@ -132,7 +151,7 @@
                 </div>
 
                 <div class="dropdown">
-                    <a href="activitati.html">Activități</a>
+                    <a href="activitati.html" aria-haspopup="true" aria-expanded="false">Activități</a>
                     <div class="dropdown-content">
                         <a href="activitati.html">Prima pagină</a>
                         <hr>
@@ -167,15 +186,15 @@
 
                         <div class="info">
                             <div class="information">
-                                <i class="fa-solid fa-location-dot" id="icon"></i>
+                                <i class="fa-solid fa-location-dot" id="icon" aria-hidden="true"></i>
                                 <p>str. 31 August, 104, or. Criuleni</p>
                             </div>
                             <div class="information">
-                                <i class="fa-solid fa-envelope" id="icon"></i>
+                                <i class="fa-solid fa-envelope" id="icon" aria-hidden="true"></i>
                                 <p>scoaladeartecriuleni@gmail.com</p>
                             </div>
                             <div class="information">
-                                <i class="fa-solid fa-phone" id="icon"></i>
+                                <i class="fa-solid fa-phone" id="icon" aria-hidden="true"></i>
                                 <p>0248 21 846</p>
                             </div>
                         </div>
@@ -183,15 +202,18 @@
                             <p>Găsește-ne și aici:</p>
                             <div class="social-icons">
                                 <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2"
-                                    target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
+                                    target="_blank"
+                                    aria-label="Vizitează pagina noastră de Instagram (se deschide într-o filă nouă)">
+                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank">
-                                    <i class="fa-brands fa-facebook"></i>
+                                <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank"
+                                    aria-label="Vizitează pagina noastră de Facebook (se deschide într-o filă nouă)">
+                                    <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                                 </a>
                                 <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q"
-                                    target="_blank">
-                                    <i class="fa-brands fa-youtube"></i>
+                                    target="_blank"
+                                    aria-label="Vizitează canalul nostru de YouTube (se deschide într-o filă nouă)">
+                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -204,29 +226,36 @@
                         <form class="contactare" method="POST" novalidate>
                             <h3 class="title">Contactează-ne</h3>
                             <div class="input-container">
-                                <input id="nume" type="text" name="name" class="input" placeholder="Nume"
+                                <label for="nume-contact" class="sr-only">Nume</label>
+                                <input id="nume-contact" type="text" name="name" class="input" placeholder="Nume"
                                     pattern="[A-Z][a-zA-Z]{2,}( [A-Z][a-zA-Z]{2,})?"
                                     title="Numele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere"
-                                    required>
-                                <small class="error-message"></small>
+                                    required aria-describedby="nume-contact-error">
+                                <small id="nume-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <div class="input-container">
-                                <input type="email" name="email" class="input" placeholder="E-mail" required>
-                                <small class="error-message"></small>
+                                <label for="email-contact" class="sr-only">E-mail</label>
+                                <input id="email-contact" type="email" name="email" class="input" placeholder="E-mail"
+                                    required aria-describedby="email-contact-error">
+                                <small id="email-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <div class="input-container">
-                                <input type="tel" name="phone" class="input" placeholder="Telefon"
+                                <label for="telefon-contact" class="sr-only">Telefon</label>
+                                <input id="telefon-contact" type="tel" name="phone" class="input" placeholder="Telefon"
                                     pattern="(\+373|0)\s?\d{2}\s?\d{3}\s?\d{3}"
-                                    title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required>
-                                <small class="error-message"></small>
+                                    title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required
+                                    aria-describedby="telefon-contact-error">
+                                <small id="telefon-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <div class="input-container textarea">
                                 <div class="textarea-wrapper">
-                                    <textarea name="message" class="input" placeholder="Mesajul dvs" maxlength="300"
-                                        required oninput="checkLength(this)"></textarea>
+                                    <label for="mesaj-contact" class="sr-only">Mesajul dvs</label>
+                                    <textarea id="mesaj-contact" name="message" class="input" placeholder="Mesajul dvs"
+                                        maxlength="300" required oninput="checkLength(this)"
+                                        aria-describedby="mesaj-contact-error"></textarea>
                                     <small id="charCount">0 / 300</small>
                                 </div>
-                                <small class="error-message"></small>
+                                <small id="mesaj-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <input type="submit" value="Trimite" class="btn">
                         </form>
@@ -236,7 +265,7 @@
                 <hr id="harta">
 
                 <div class="map-holder">
-                    <iframe class="map"
+                    <iframe class="map" title="Harta locației Școlii de Arte Criuleni"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1611.5062311275778!2d29.16172531498751!3d47.21228480563123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c95d6f714170d7%3A0x621352395fb1e057!2zyJhjb2FsxIMgZGUgQXJ0ZQ!5e0!3m2!1sru!2s!4v1720615513377!5m2!1sru!2s"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -250,13 +279,13 @@
         <div class="footer-top">
             <div class="footer-logo-box">
                 <a href="../index.html">
-                    <img class="footer-logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni">
+                    <img class="footer-logo" src="../images/logo.png" alt="Logo Școala de Arte Criuleni" loading="lazy">
                 </a>
             </div>
 
             <div class="footer-links">
 
-                <div class="footer-nav">
+                <div class="footer-nav" aria-label="Navigație subsol">
                     <h4 class="footer-h4"><a href="despre.html">Despre Noi</a></h4>
                     <h4 class="footer-h4"><a href="specializari.html">Specializări</a></h4>
                     <h4 class="footer-h4"><a href="activitati.html">Activități</a></h4>
@@ -268,18 +297,21 @@
                 <h4>Urmărește-ne</h4>
                 <div class="social-links">
                     <span class="instagram-box">
-                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank">
-                            <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/scoaladeartecriuleni?igsh=enk5N2NhNTJvdHB2" target="_blank"
+                            aria-label="Vizitează pagina noastră de Instagram (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="facebook-box">
-                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank">
-                            <i class="fa-brands fa-facebook-f"></i>
+                        <a href="https://www.facebook.com/ScoaladeArteCR" target="_blank"
+                            aria-label="Vizitează pagina noastră de Facebook (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                         </a>
                     </span>
                     <span class="youtube-box">
-                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank">
-                            <i class="fa-brands fa-youtube"></i>
+                        <a href="https://youtube.com/@scoaladeartecriuleni8545?si=sdF-3Z4jAlG0QO0Q" target="_blank"
+                            aria-label="Vizitează canalul nostru de YouTube (se deschide într-o filă nouă)">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                         </a>
                     </span>
                 </div>
@@ -297,8 +329,9 @@
                     </h2>
                     <span class="footer-span">Republica Moldova, or. Criuleni, str. 31 August, 104</span>
                 </div>
-                <a href="../resources/regulament-scoli-arte.pdf" target="_blank">
-                    <span><i class="fa-regular fa-file"></i></span>
+                <a href="../resources/regulament-scoli-arte.pdf" target="_blank"
+                    aria-label="Acte conform cărora activează școala (se deschide într-o filă nouă)">
+                    <span><i class="fa-regular fa-file" aria-hidden="true"></i></span>
                     <p>Acte conform cărora activează școala</p>
                 </a>
             </div>

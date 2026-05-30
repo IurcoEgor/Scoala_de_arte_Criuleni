@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Salvarea paginii curente pentru navigare (fix pentru file:// unde referrer lipsește)
     const pathName = window.location.pathname;
     const pageName = pathName.substring(pathName.lastIndexOf('/') + 1);
     if (pageName === 'index.html' || pageName === '' || pageName.startsWith('activitati')) {
         sessionStorage.setItem('last_main_page', window.location.href);
     }
 
-    // Link dinamic pentru butoanele "home" pe paginile de știri
     const homeBtn = document.getElementById('home-news-link');
     const homeMenu = document.getElementById('home-news-link-menu');
 
@@ -17,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const referrer = document.referrer;
         const storedReferrer = sessionStorage.getItem('last_main_page');
 
-        // Folosim referrer dacă există, altfel încercăm sessionStorage
         const candidateUrl = referrer || storedReferrer;
 
         if (candidateUrl) {
@@ -25,12 +22,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 const urlObj = new URL(candidateUrl);
                 const refPage = urlObj.pathname.substring(urlObj.pathname.lastIndexOf('/') + 1);
 
-                // Permitem revenirea la index.html sau la paginile de activități
                 if (refPage === 'index.html' || refPage.startsWith('activitati')) {
-                    backUrl = candidateUrl; // Folosim URL-ul complet pentru a păstra parametrii
+                    backUrl = candidateUrl;
                 }
             } catch (e) {
-                // Dacă apare o eroare la parsarea URL-ului, se va folosi link-ul fallback.
                 console.warn('Could not parse URL:', candidateUrl, e);
             }
         }
@@ -38,9 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (homeMenu) homeMenu.setAttribute('href', backUrl);
     }
 
-    // Link dinamic pentru ultima pagină de activități
     if (window.EVENTS_DATA) {
-        const itemsPerPage = 9; // Asigură-te că valoarea este aceeași ca în events-loader.js
+        const itemsPerPage = 9;
         const totalEvents = window.EVENTS_DATA.length;
         const totalPages = Math.max(1, Math.ceil(totalEvents / itemsPerPage));
 
@@ -59,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (anSpan) anSpan.innerHTML = data.getFullYear();
 
     // Formular
-    const inputs = document.querySelectorAll('#nume-prenume-elev, #nume-prenume-parinte, #localitate, #nume');
+    const inputs = document.querySelectorAll('#nume-prenume-copil, #limba, #clasa-generala, #domiciliu-copil, #clasa-specialitate, #nume-mama, #domiciliu-mama, #nume-tata, #domiciliu-tata');
     inputs.forEach(input => {
         input.addEventListener('blur', function () {
             this.value = this.value.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
@@ -90,11 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     list.forEach((item) => item.addEventListener('click', activeLink));
 
-    // Setare automată a clasei active bazată pe URL
     const currentPath = window.location.pathname;
     list.forEach((item) => {
         const link = item.querySelector('a').getAttribute('href');
-        // Verificăm dacă href-ul linkului se regăsește în calea curentă
         if (currentPath.includes(link) || (link === 'index.html' && (currentPath.endsWith('/') || currentPath.endsWith('index.html')))) {
             list.forEach((li) => li.classList.remove('active'));
             item.classList.add('active');
@@ -137,16 +129,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     function toggleAccordion(panelToActivate) {
-        const buttons = panelToActivate.parentElement.querySelectorAll('button');
-        const contents = panelToActivate.parentElement.querySelectorAll('.accordion-content');
-        buttons.forEach((button) => {
-            button.setAttribute('aria-expanded', false)
+        const button = panelToActivate.querySelector('button');
+        const content = panelToActivate.querySelector('.accordion-content');
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+        const parent = panelToActivate.parentElement;
+        const allPanels = parent.querySelectorAll('.accordion-panel');
+
+        allPanels.forEach((panel) => {
+            const btn = panel.querySelector('button');
+            const cont = panel.querySelector('.accordion-content');
+
+            if (panel === panelToActivate) {
+                btn.setAttribute('aria-expanded', !isExpanded);
+                cont.setAttribute('aria-hidden', isExpanded);
+            } else {
+                btn.setAttribute('aria-expanded', 'false');
+                cont.setAttribute('aria-hidden', 'true');
+            }
         });
-        contents.forEach((contents) => {
-            contents.setAttribute('aria-hidden', true)
-        });
-        panelToActivate.querySelector('button').setAttribute('aria-expanded', true);
-        panelToActivate.querySelector('.accordion-content').setAttribute('aria-hidden', false);
     }
 
     // Scroll to top button
@@ -173,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (carousel && prevBtn && nextBtn && cards.length > 0) {
         let currentIndex = 0;
-        let cardsPerView = 3; // Desktop: 3 carduri vizibile
+        let cardsPerView = 3;
         let totalDots = 0;
 
         function getCardsPerView() {
@@ -191,10 +192,8 @@ document.addEventListener("DOMContentLoaded", function () {
             cardsPerView = getCardsPerView();
             totalDots = Math.max(1, cards.length - cardsPerView + 1);
 
-            // Șterge dots-urile vechi
             dotsContainer.innerHTML = '';
 
-            // Creează dots-uri noi
             for (let i = 0; i < totalDots; i++) {
                 const dot = document.createElement('button');
                 dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
@@ -203,7 +202,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 dotsContainer.appendChild(dot);
             }
 
-            // Resetează index dacă e necesară ajustare
             if (currentIndex >= totalDots) {
                 currentIndex = totalDots - 1;
             }
@@ -246,32 +244,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Oprire autoplay la derulare manuală (ignorăm scroll programatic)
         let isUserScrolling = false;
         carousel.addEventListener('scroll', (e) => {
-            // Dacă evenimentul nu este generat de utilizator, îl ignorăm
             if (e && e.isTrusted === false) return;
             isUserScrolling = true;
             stopAutoplay();
 
-            // Resetează indicatorul după ce s-a terminat derularea
             clearTimeout(carousel.scrollTimeout);
             carousel.scrollTimeout = setTimeout(() => {
                 isUserScrolling = false;
-                // Repornim autoplay după scurt timp dacă nu există altă interacțiune
                 startAutoplay();
             }, 150);
         });
 
-        // Update la resize
         window.addEventListener('resize', () => {
             recreateDots();
         });
 
-        // Auto-play (opțional)
         let autoplayInterval;
         function startAutoplay() {
-            // Evităm crearea unor intervale multiple
             stopAutoplay();
             autoplayInterval = setInterval(() => {
                 if (currentIndex < totalDots - 1) {
@@ -293,32 +284,27 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.addEventListener('mouseenter', stopAutoplay);
         carousel.addEventListener('mouseleave', startAutoplay);
 
-        // Uncomment pentru a activa autoplay
+
         startAutoplay();
     }
 
-    // Afișare ultimele 3 știri pe homepage
+    // Ultimele 3 știri pe homepage
     const homepageNewsContainer = document.getElementById('homepage-news-section');
     if (homepageNewsContainer && window.EVENTS_DATA) {
         const events = [...window.EVENTS_DATA];
 
-        // Sortează descrescător după dată
         events.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        // Preia primele 3
         const latestEvents = events.slice(0, 3);
 
-        // Funcție pentru a genera un card de știre
         const createNewsCard = (event) => {
             const card = document.createElement('div');
             card.className = 'news-card';
 
-            // Corectează căile pentru index.html (elimină ../ recursiv pentru securitate)
             const sanitize = p => { while (p.includes('../')) p = p.replace('../', ''); return p; };
             const imagePath = sanitize(event.image);
             const linkPath = sanitize(event.link);
 
-            // Logică Status Badge (identică cu events-loader.js)
             const today = new Date();
             today.setHours(0, 0, 0, 0);
             const eventStart = new Date(event.date);
@@ -339,13 +325,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 statusClass = 'status-now';
             }
 
-            // Construiește descrierea, dacă există, pentru a fi identic cu pagina de activități
             const descriptionHtml = event.description ? `<p class="news-desc">${event.description}</p>` : '';
 
-            // Formatează data pentru a fi identică cu cea din activitati.html
             let formattedDate = new Date(event.date).toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
 
-            // Adaugă data de sfârșit dacă există
             if (event.endDate) {
                 const endDateObj = new Date(event.endDate);
                 if (endDateObj.getTime() !== new Date(event.date).getTime()) {
@@ -376,12 +359,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Animație la derulare (Reveal)
     const revealElements = document.querySelectorAll('.reveal');
     if (revealElements.length > 0 && 'IntersectionObserver' in window) {
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px" // Se activează puțin înainte de a fi complet vizibil
+            rootMargin: "0px 0px -50px 0px"
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
@@ -404,9 +386,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Funcție pentru verificarea lungimii textului (definită global)
+// Verificarea lungimii textului
 window.checkLength = function (el) {
-    const maxLength = 300;
+    const maxLength = 500;
     const currentLength = el.value.length;
     const charCount = document.getElementById('charCount');
 
@@ -421,7 +403,6 @@ window.checkLength = function (el) {
     }
 };
 
-// Inițializare contor la încărcarea paginii (dacă există text)
 const messageTextarea = document.querySelector('textarea[name="message"]');
 if (messageTextarea) {
     window.checkLength(messageTextarea);

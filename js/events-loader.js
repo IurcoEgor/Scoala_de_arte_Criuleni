@@ -1,24 +1,19 @@
 document.addEventListener('DOMContentLoaded', async () => {
-  const itemsPerPage = 9; // 3 pe rând x 3 rânduri
+  const itemsPerPage = 9;
 
-  // Determinare pagina curentă: ?page=N sau din numele fișierului (activitati2.html)
   function getCurrentPage() {
     const params = new URLSearchParams(window.location.search);
     const p = parseInt(params.get('page'));
-    // Pagina este determinată exclusiv de parametrul '?page=N'.
-    // Dacă parametrul lipsește sau este invalid, se consideră pagina 1.
     return (!isNaN(p) && p > 0) ? p : 1;
   }
 
   const page = getCurrentPage();
 
-  // Folosește variabila globală EVENTS_DATA
   function parseDate(d) {
     const t = Date.parse(d);
     return isNaN(t) ? null : t;
   }
 
-  // Generează cardul cu structură identică HTML-ului original static
   function renderCard(ev) {
     // <div class="news-card">
     //   <a href="...">
@@ -33,14 +28,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     //   </div>
     // </div>
 
-    // Logică pentru status
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const eventStart = new Date(ev.date);
-    // Dacă nu există endDate, considerăm că evenimentul e doar o zi
     const eventEnd = ev.endDate ? new Date(ev.endDate) : new Date(ev.date);
-    eventEnd.setHours(23, 59, 59, 999); // Sfârșitul zilei
+    eventEnd.setHours(23, 59, 59, 999);
 
     let statusText = '';
     let statusClass = '';
@@ -59,11 +52,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const card = document.createElement('div');
     card.className = 'news-card';
 
-    // Imaginea cu link
+    // Imaginea
     const aImg = document.createElement('a');
     aImg.href = ev.link;
 
-    // Adăugare Badge Status
+    // Badge
     const badge = document.createElement('span');
     badge.className = `event-status ${statusClass}`;
     badge.textContent = statusText;
@@ -73,7 +66,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     img.src = ev.image;
     img.alt = ev.alt || ev.title;
     img.loading = 'lazy';
-    img.height = 175; // Conform CSS .news-img { height: 175px; }
+    img.height = 175;
     img.className = 'news-img';
     aImg.appendChild(img);
     card.appendChild(aImg);
@@ -82,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const body = document.createElement('div');
     body.className = 'news-body';
 
-    // Titlu cu link
+    // Titlu
     const aTitle = document.createElement('a');
     aTitle.href = ev.link;
     const h3 = document.createElement('h3');
@@ -91,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     aTitle.appendChild(h3);
     body.appendChild(aTitle);
 
-    // Descriere (opțional)
+    // Descriere
     if (ev.description) {
       const p = document.createElement('p');
       p.className = 'news-desc';
@@ -105,10 +98,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (ev.date) {
       time.setAttribute('datetime', ev.date);
       const dt = new Date(ev.date);
-      // Format identic cu staticul: 31 octombrie 2023
       let dateString = dt.toLocaleDateString('ro-RO', { day: '2-digit', month: 'long', year: 'numeric' });
 
-      // Adăugare data de sfârșit dacă există și diferă
       if (ev.endDate) {
         const dtEnd = new Date(ev.endDate);
         if (dtEnd.getTime() !== dt.getTime()) {
@@ -128,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     container.innerHTML = '';
     const baseFile = 'activitati.html';
 
-    // Prev (doar dacă nu suntem pe prima pagină)
+    // Prev
     if (current > 1) {
       const prevLink = document.createElement('a');
       prevLink.className = 'news-arrow';
@@ -149,7 +140,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       container.appendChild(a);
     }
 
-    // Next (doar dacă nu suntem pe ultima pagină)
+    // Next
     if (current < totalPages) {
       const nextLink = document.createElement('a');
       nextLink.className = 'news-arrow';
@@ -160,10 +151,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Folosește window.EVENTS_DATA
   const events = window.EVENTS_DATA ? [...window.EVENTS_DATA] : [];
 
-  // Sortează desc după dată
   events.sort((a, b) => {
     const da = parseDate(a.date);
     const db = parseDate(b.date);
@@ -188,12 +177,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   buildPagination(pagination, totalPages, currentPage);
 
-  // Animație modernă pentru cardurile de știri
   const animatedCards = newsSection.querySelectorAll('.news-card:not(.empty)');
   if (animatedCards.length > 0 && 'IntersectionObserver' in window) {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px 65px 0px" // Se activează puțin înainte de a fi complet vizibil
+      rootMargin: "0px 0px 65px 0px"
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -206,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, observerOptions);
 
     animatedCards.forEach((card, index) => {
-      card.style.transitionDelay = `${index * 7}ms`; // Efect de cascadă
+      card.style.transitionDelay = `${index * 7}ms`;
       observer.observe(card);
     });
   }

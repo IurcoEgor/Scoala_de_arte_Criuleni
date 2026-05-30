@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 
 <head>
     <meta charset="UTF-8">
@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/pages-content.css">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -174,8 +175,7 @@
 
             <hr id="contacte">
 
-            <section class="container">
-
+            <div class="container">
                 <div class="form">
                     <div class="contact-info">
                         <h3 class="title">Hai să luăm legătură!</h3>
@@ -251,9 +251,9 @@
                                 <div class="textarea-wrapper">
                                     <label for="mesaj-contact" class="sr-only">Mesajul dvs</label>
                                     <textarea id="mesaj-contact" name="message" class="input" placeholder="Mesajul dvs"
-                                        maxlength="300" required oninput="checkLength(this)"
+                                        maxlength="500" required oninput="checkLength(this)"
                                         aria-describedby="mesaj-contact-error"></textarea>
-                                    <small id="charCount">0 / 300</small>
+                                    <small id="charCount">0 / 500</small>
                                 </div>
                                 <small id="mesaj-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
@@ -261,15 +261,114 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
-                <hr id="harta">
+            <hr id="faq">
 
+            <div class="faq-section">
+                <h2 class="h2-special">Întrebări Frecvente (FAQ)</h2>
+                <div class="faq-wrapper">
+                    <div class="accordion">
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq1-heading">
+                                <button class="accordion-trigger" aria-controls="faq1-content" aria-expanded="false">
+                                    <span class="accordion-title">Care este vârsta minimă pentru înscriere?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq1-content" aria-labelledby="faq1-heading"
+                                aria-hidden="true" role="region">
+                                <p>Se primesc copii cu vârsta cuprinsă între 4 și 14 ani, în funcție de specialitatea
+                                    aleasă.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq2-heading">
+                                <button class="accordion-trigger" aria-controls="faq2-content" aria-expanded="false">
+                                    <span class="accordion-title">Ce documente sunt necesare pentru dosarul de
+                                        înscriere?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq2-content" aria-labelledby="faq2-heading"
+                                aria-hidden="true" role="region">
+                                <p>Copia certificatului de naștere al copilului, copia buletinului de identitate al
+                                    părintelui și cererea de înmatriculare tipizată.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq3-heading">
+                                <button class="accordion-trigger" aria-controls="faq3-content" aria-expanded="false">
+                                    <span class="accordion-title">Sunt oferite instrumentele muzicale de către
+                                        școală?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq3-content" aria-labelledby="faq3-heading"
+                                aria-hidden="true" role="region">
+                                <p>Școala poate oferi instrumentele pentru orele desfășurate în incinta instituției.
+                                    Pentru exersarea acasă, se recomandă ca elevul să dețină propriul instrument.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq4-heading">
+                                <button class="accordion-trigger" aria-controls="faq4-content" aria-expanded="false">
+                                    <span class="accordion-title">Care este durata studiilor la Școala de
+                                        Arte?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq4-content" aria-labelledby="faq4-heading"
+                                aria-hidden="true" role="region">
+                                <p>Durata studiilor variază între 5 și 7 ani, în funcție de curriculumul aprobat
+                                    pentru fiecare specialitate.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq5-heading">
+                                <button class="accordion-trigger" aria-controls="faq5-content" aria-expanded="false">
+                                    <span class="accordion-title">Se pot înscrie și adulții la cursuri?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq5-content" aria-labelledby="faq5-heading"
+                                aria-hidden="true" role="region">
+                                <p>Instituția are ca prioritate educația copiilor, însă adulții pot fi admiși pe
+                                    bază de contract în limita locurilor disponibile.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-panel faq-panel">
+                            <h2 id="faq6-heading">
+                                <button class="accordion-trigger" aria-controls="faq6-content" aria-expanded="false">
+                                    <span class="accordion-title">Cum se efectuează plata taxelor de studii?</span>
+                                    <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                                </button>
+                            </h2>
+                            <div class="accordion-content" id="faq6-content" aria-labelledby="faq6-heading"
+                                aria-hidden="true" role="region">
+                                <p>Taxele pot fi achitate online prin MPay sau la ghișeele băncilor comerciale
+                                    utilizând codul de plată din factură.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr id="harta">
+
+            <div class="container">
                 <div class="map-holder">
                     <iframe class="map" title="Harta locației Școlii de Arte Criuleni"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1611.5062311275778!2d29.16172531498751!3d47.21228480563123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c95d6f714170d7%3A0x621352395fb1e057!2zyJhjb2FsxIMgZGUgQXJ0ZQ!5e0!3m2!1sru!2s!4v1720615513377!5m2!1sru!2s"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </section>
+            </div>
 
         </div>
 

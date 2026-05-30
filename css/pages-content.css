@@ -1197,10 +1197,6 @@ select.invalid+.custom-select-selected {
 }
 
 /* FAQ Contact Page */
-.faq-section {
-    padding: 50px 2rem;
-    width: 100%;
-}
 
 .faq-wrapper {
     max-width: 88%;
@@ -1276,16 +1272,14 @@ select.invalid+.custom-select-selected {
     opacity: 1;
 }
 
-/* Reset for FAQ to be vertical always */
-.faq-section .accordion {
+.faq-wrapper .accordion {
     flex-direction: column !important;
     height: auto !important;
     gap: 10px;
     padding-bottom: 10px;
 }
 
-/* Eliminăm background-ul negru pentru titluri pe ecrane mici în secțiunea FAQ */
-.faq-section .accordion-title::after {
+.faq-wrapper .accordion-title::after {
     display: none !important;
 }
 

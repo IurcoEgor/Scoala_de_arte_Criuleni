@@ -181,11 +181,77 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Render sections
     renderProfessors(data.music, 'music-professors');
     renderProfessors(data.creatie, 'creatie-professors');
 
-    // Intersection Observer for reveal animations
+    (function initEnrollmentLogic() {
+        const specSelect = document.getElementById('specializare');
+        const profSelect = document.getElementById('profesor');
+        if (!specSelect || !profSelect) return;
+
+        const specialtyToTeachers = {
+            'pian': ['Spasova Ella', 'Glinca Ludmila', 'Manin Nelea', 'Ilieș Nina', 'Telpis Ecaterina', 'Natalia Corețchi'],
+            'vioara': ['Mîndru Petru'],
+            'chitara': ['Mîndru Petru'],
+            'acordeon': ['Ala Belenciuc'],
+            'trompeta': ['Burlac Valeriu'],
+            'saxofon': ['Dîrul Vladislav'],
+            'interpretare': ['Telpis Ecaterina'],
+            'arta-coregrafica': ['Bulgaru Ala', 'Sitișco Ruslan', 'Irina Godoroja', 'Natalia Corețchi'],
+            'arta-dramatica': ['Dimitrașco Natalia'],
+            'arta-plastica': ['Ala Roșcovanu', 'Șerbu Mihail']
+        };
+
+        const allTeachers = Object.values(specialtyToTeachers).flat().filter((v, i, a) => a.indexOf(v) === i).sort();
+        const errorMsg = profSelect.closest('.form-group').querySelector('.error-message');
+
+        function populateProfessors(spec) {
+            const currentProf = profSelect.value;
+            profSelect.innerHTML = '<option value="" disabled selected>Alege profesorul</option>';
+
+            const allowed = spec ? specialtyToTeachers[spec] : allTeachers;
+
+            allowed.forEach(name => {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.textContent = name;
+                profSelect.appendChild(opt);
+            });
+
+            if (currentProf) {
+                if (spec && specialtyToTeachers[spec].includes(currentProf)) {
+                    profSelect.value = currentProf;
+                    errorMsg.classList.remove('visible');
+                } else if (spec) {
+                    profSelect.value = '';
+                    errorMsg.textContent = 'Profesorul dat nu predă specialitatea selectată.';
+                    errorMsg.classList.add('visible');
+                } else {
+                    profSelect.value = currentProf;
+                }
+            }
+        }
+
+        specSelect.addEventListener('change', () => {
+            populateProfessors(specSelect.value);
+        });
+
+        profSelect.addEventListener('change', () => {
+            const spec = specSelect.value;
+            const prof = profSelect.value;
+            if (spec && !specialtyToTeachers[spec].includes(prof)) {
+                profSelect.value = '';
+                errorMsg.textContent = 'Profesorul dat nu predă specialitatea selectată.';
+                errorMsg.classList.add('visible');
+            } else {
+                errorMsg.textContent = '';
+                errorMsg.classList.remove('visible');
+            }
+        });
+
+        populateProfessors('');
+    })();
+
     const observerOptions = { threshold: 0.12 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -196,22 +262,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }, observerOptions);
 
-    // Observe all reveal elements
     const reveals = document.querySelectorAll('.reveal');
     reveals.forEach(el => observer.observe(el));
 
-    // Set referrer/back links for header buttons (only same-origin; external/direct access uses fallback)
     (function setRefLinks() {
         const fallback = '../pages/despre.html';
         const ref = document.referrer;
         ['referrer-link-top', 'referrer-link-menu'].forEach(id => {
             const a = document.getElementById(id);
             if (!a) return;
-            // Check if referrer is same-origin (internal link)
             if (ref && new URL(ref).origin === window.location.origin) {
                 a.href = ref;
             } else {
-                // External referrer or direct access - use fallback page
                 a.href = fallback;
             }
         });

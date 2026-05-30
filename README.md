@@ -55,7 +55,9 @@ Vizitați site-ul publicat aici: **[Scoala_de_arte_Criuleni.github.io](https://i
 ├── index.html                # Pagina principală
 ├── README.md                 # Acest fișier
 ├── css/
-│   └── style.css             # Fișierul principal de stiluri
+│   ├── home-activitati.css   # Stiluri pentru pagina index și activități
+│   ├── pages-content.css     # Stiluri pentru celelalte pagini
+│   └── style.css             # Fișierul principal de stiluri  
 ├── js/
 │   ├── main.js               # Script principal (navigație, carusel, etc.)
 │   ├── events-data.js        # Baza de date a evenimentelor

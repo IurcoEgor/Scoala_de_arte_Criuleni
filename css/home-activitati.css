@@ -1,0 +1,1392 @@
+/* Index, Activități, pagini eveniment (link-pages) */
+
+#intro {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(20, 35, 70, 0.3), rgba(28, 51, 111, 0.4)), image-set(url("../images/scoala-bg.webp") type("image/webp"),
+            url("../images/scoala-bg.jpg") type("image/jpeg"));
+    ;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    padding: 0px;
+}
+
+#intro-content {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 15px;
+    padding-top: 25vh;
+    padding-bottom: 0;
+    margin: 0;
+    background-image: url('../images/valuri.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom -20vh right 100%;
+}
+
+#intro-content h1 {
+    display: flex;
+    font-size: 7vh;
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+    max-width: 75vw;
+}
+
+#intro-content p {
+    display: flex;
+    font-size: 24px;
+    color: rgb(201, 201, 201);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+}
+
+.intro-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    margin: 5% 0;
+    width: 100%;
+}
+
+.intro-button a {
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    padding: 8px;
+    border-radius: 100px;
+    width: 100%;
+    max-width: 200px;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.intro-button hr {
+    display: block;
+    border-top: 1.5px solid white;
+    max-width: 100%;
+    top: 0;
+}
+
+.intro-button a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+/* Parteneri Section */
+
+.parteneri-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 88%;
+    margin-inline: auto;
+    gap: 30px;
+}
+
+.parteneri-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.parteneri-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    max-width: 600px;
+}
+
+/* Carousel Wrapper */
+.parteneri-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parteneri-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 15px 0;
+    margin-inline: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.partener-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 calc(33.333% - 14px);
+    scroll-snap-align: start;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.partener-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #8fa9fd, #394694, #8fa9fd);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        background-position: 200% 0;
+    }
+
+    50% {
+        background-position: -200% 0;
+    }
+}
+
+.partener-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(57, 70, 148, 0.12);
+}
+
+.partener-logo-wrapper {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.partener-card:hover .partener-logo-wrapper {
+    transform: scale(1.08);
+}
+
+.partener-logo-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.partener-card:hover .partener-logo-img {
+    filter: drop-shadow(0 5px 15px rgba(57, 70, 148, 0.2));
+}
+
+.partener-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1c3370;
+    margin: 10px 0 8px;
+    transition: all 0.3s ease;
+    line-height: 1.3;
+}
+
+.partener-card:hover .partener-name {
+    color: #394694;
+}
+
+.partener-desc {
+    font-size: 0.85rem;
+    color: rgba(14, 25, 55, 0.65);
+    line-height: 1.5;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.partener-card:hover .partener-desc {
+    color: rgba(14, 25, 55, 0.85);
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #8fa9fd;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(143, 169, 253, 0.3);
+}
+
+.carousel-btn:hover {
+    background: #394694;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(57, 70, 148, 0.4);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.carousel-dot.active {
+    background: #8fa9fd;
+    width: 28px;
+    border-radius: 5px;
+}
+
+.carousel-dot:hover {
+    background: #8fa9fd;
+}
+
+/* Responsive design pentru parteneri */
+@media screen and (max-width: 1200px) {
+    .partener-card {
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    .parteneri-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .partener-card {
+        padding: 25px 18px;
+        min-height: 270px;
+    }
+
+    .partener-logo-wrapper {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 12px;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .parteneri-title {
+        font-size: 1.6rem;
+    }
+
+    .parteneri-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .partener-name {
+        font-size: 0.95rem;
+    }
+
+    .partener-desc {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .partener-card {
+        flex: 0 0 100%;
+        min-height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .partener-card {
+        flex: 0 0 100%;
+        padding: 20px 15px;
+        min-height: 260px;
+    }
+
+    .partener-logo-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 10px;
+    }
+
+    .parteneri-title {
+        font-size: 1.4rem;
+    }
+
+    .partener-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* Homepage specializari */
+
+.index-sec {
+    width: 100%;
+    padding: 65px 2rem;
+}
+
+.specializari-container {
+    display: flex;
+    align-items: center;
+    max-width: 88%;
+    margin-inline: auto;
+    gap: 5%;
+}
+
+.specializari-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-basis: 35%;
+    max-width: 35%;
+    height: 100%;
+    gap: 20px;
+}
+
+.b-sec-h1 {
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+.b-sec-p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+    padding: 0 0 18px 0;
+}
+
+.b-sec-btn {
+    margin: 12px 0;
+    padding: 10px 26px;
+    background-color: #394694;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.b-sec-btn:hover {
+    background-color: white;
+    color: #394694;
+    border-color: #394694;
+    box-shadow: 0 6px 15px rgba(57, 70, 148, 0.4);
+}
+
+.specializari-grid {
+    display: flex;
+    gap: 35px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-basis: 65%;
+    max-width: 65%;
+    height: 100%;
+}
+
+.specializare {
+    flex: 1;
+    min-width: 180px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    min-height: 250px;
+}
+
+.specializare:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+.specializare.muzica {
+    background-image: linear-gradient(to top, rgba(60, 120, 220, 0.85), rgba(60, 120, 220, 0.35)), url('../images/muzica-bg.jpg');
+}
+
+.specializare.creatie {
+    background-image: linear-gradient(to top, rgba(110, 85, 175, 0.85), rgba(110, 85, 175, 0.4)), url('../images/creatie-bg.jpg');
+}
+
+.spec-content {
+    padding: 24px;
+    color: #fff;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(60, 120, 220, 0.85) 60%, transparent 100%);
+    border-radius: 0 0 18px 18px;
+    width: 100%;
+}
+
+.specializare.creatie .spec-content {
+    background: linear-gradient(to top, rgba(110, 85, 175, 0.85) 60%, transparent 100%);
+}
+
+.spec-content h2 {
+    font-size: 1.4rem;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.spec-content p {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+/*  */
+
+/* Reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.from-left {
+    transform: translateX(-28px);
+}
+
+.reveal.from-right {
+    transform: translateX(28px);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* Responsive: specializări pe index */
+
+@media screen and (max-width: 1280px) {
+    .b-sec-h1 {
+        font-size: 1.6rem;
+    }
+
+    .spec-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .intro-button a {
+        font-size: 24px;
+        max-width: 180px;
+    }
+
+    #intro-content h1 {
+        font-size: 6.5vh;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .index-sec {
+        padding: 45px 1.5rem;
+    }
+
+    .specializari-container {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .specializari-intro,
+    .specializari-grid {
+        max-width: 100%;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .b-sec-p {
+        text-align: center;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .b-sec-btn {
+        margin: 0;
+        padding: 8px 22px;
+        font-size: 1rem;
+    }
+
+    .specializare {
+        min-height: 200px;
+        min-width: 150px;
+        max-width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #intro-content {
+        padding-top: 20vh;
+    }
+
+    #intro-content p {
+        flex-direction: column;
+    }
+
+    .index-sec {
+        padding: 40px 0 50px 0;
+    }
+
+    .b-sec-h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .specializare {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .specializari-grid {
+        flex-direction: column;
+    }
+
+    .intro-button a {
+        font-size: 1.2rem;
+        max-width: 160px;
+    }
+
+    #intro-content p {
+        font-size: 1.2rem;
+    }
+
+    #intro-content h1 {
+        font-size: 6vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #intro-content h1 {
+        font-size: 5vh;
+    }
+
+    #intro-content p {
+        font-size: 1.1rem;
+    }
+
+    .intro-button a {
+        font-size: 1rem;
+        max-width: 150px;
+    }
+
+    .intro-button hr {
+        display: none;
+    }
+}
+
+.stiri-container {
+    max-width: 88%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.stiri-h1 {
+    font-size: 2rem;
+    margin: 0 0 20px 0;
+}
+
+/* Stiri */
+
+.news-content {
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.news-content>div {
+    display: flex;
+    max-width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2.5%;
+}
+
+.news-container {
+    width: 100%;
+}
+
+.news-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    row-gap: 28px;
+}
+
+.news-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 0;
+    min-height: 260px;
+}
+
+.news-container .news-card {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.news-card {
+    background: rgb(239, 243, 255);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 31.33%;
+    transition: box-shadow 0.3s, transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.news-card:hover:not(.empty) {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px);
+}
+
+.news-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-bottom: 1px solid #c9d6ff;
+}
+
+.news-body {
+    padding: 4px 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Status Badge pentru Evenimente */
+.event-status {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.news-card:hover .event-status {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status-past {
+    background-color: #394694;
+}
+
+.status-upcoming {
+    background-color: #24a756;
+}
+
+.status-now {
+    background-color: #ff4757;
+    box-shadow: 0 0 10px rgba(255, 71, 87, 0.4);
+    animation: pulse-status 2s infinite;
+}
+
+@keyframes pulse-status {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Asigurăm poziționarea relativă a link-ului imaginii pentru a plasa badge-ul corect */
+.news-card>a {
+    position: relative;
+    display: block;
+}
+
+.news-body {
+    padding: 4px 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #394694;
+}
+
+.news-date {
+    font-size: 0.95rem;
+    color: #8fa9fd;
+    margin-bottom: 8px;
+}
+
+.news-desc {
+    font-size: 0.98rem;
+    color: #394694;
+    margin: 0 0 4px 0;
+    flex: 1;
+}
+
+.news-link {
+    align-self: flex-start;
+    background: #8fa9fd;
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.news-link:hover {
+    background: #394694;
+}
+
+.news-card.empty {
+    background: none;
+    box-shadow: none;
+    opacity: 0;
+    transform: none;
+    pointer-events: none;
+}
+
+/* Paginare */
+.news-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 55px 0 30px 0;
+}
+
+.news-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #8fa9fd;
+    color: #fff;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: background 0.3s;
+    text-decoration: none;
+    border: none;
+}
+
+.news-arrow:hover {
+    background: #394694;
+    color: #fff;
+}
+
+.news-page-btn {
+    background: #8fa9fd;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.news-page-btn.active,
+.news-page-btn:hover {
+    background: #394694;
+}
+
+/* Calendar Widget */
+.calendar-container {
+    width: 25%;
+    min-width: 210px;
+    padding: 0.5%;
+    background-color: rgb(239, 243, 255);
+    border-radius: 28px;
+    margin-bottom: 127px;
+}
+
+.calendar-widget {
+    background: #fff;
+    border-radius: 28px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 14px;
+    align-self: flex-start;
+    position: sticky;
+    top: 115px;
+    color: #1c3370;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: #394694;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.calendar-nav {
+    background: transparent;
+    border: none;
+    color: #8fa9fd;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-nav:hover {
+    background-color: rgba(143, 169, 253, 0.2);
+    color: #394694;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 1.2px;
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    border-radius: 0;
+    padding-bottom: 4px;
+    font-size: 0.9rem;
+    position: relative;
+    cursor: default;
+    transition: background-color 0.2s;
+}
+
+.calendar-day.other-month {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.calendar-day.other-month .event-bar {
+    opacity: 0.4;
+}
+
+.calendar-day.today span {
+    background-color: #c9d6ff;
+    color: #1c3370;
+    font-weight: 700;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tooltip specific pentru ziua de Azi */
+.calendar-day.today::after {
+    content: "Azi";
+    position: absolute;
+    background: rgb(28, 51, 112, 0.75);
+    color: white;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.calendar-day.today:hover::after {
+    opacity: 1;
+}
+
+.calendar-day.has-event {
+    font-weight: bold;
+}
+
+.calendar-day.has-event:hover:not(.other-month) {
+    background-color: rgba(143, 169, 253, 0.1);
+    border-radius: 8px;
+}
+
+.calendar-day .dots-container {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+/* Liniile continue (bars) */
+.event-bar {
+    height: 4px;
+    width: 100%;
+    background-color: #24a756;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+}
+
+.event-bar.start {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-left: 4px;
+    width: calc(100% - 4px);
+}
+
+.event-bar.end {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-right: 4px;
+    width: calc(100% - 4px);
+}
+
+.event-bar.start.end {
+    border-radius: 8px;
+    width: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.event-bar.past {
+    background-color: #394694;
+}
+
+.event-bar.upcoming {
+    background-color: #24a756;
+}
+
+.event-bar.now {
+    background-color: #ff4757;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    margin-top: 16px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.legend-item .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.legend-item .dot.past {
+    background-color: #394694;
+}
+
+.legend-item .dot.upcoming {
+    background-color: #24a756;
+}
+
+.legend-item .dot.today {
+    background-color: #c9d6ff;
+}
+
+/* Stil specific pentru Acum in legenda daca difera de Azi */
+.legend-item .dot.now {
+    background-color: #ff4757;
+}
+
+.event-tooltip {
+    position: absolute;
+    background: #394694;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    z-index: 100;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+/* Starea activă (fixată) a tooltip-ului */
+.event-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    top: 100%;
+    bottom: auto;
+    margin-top: 8px;
+    z-index: 101;
+}
+
+.event-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #394694 transparent transparent transparent;
+}
+
+.event-tooltip.active::after {
+    bottom: 100%;
+    top: auto;
+    border-color: transparent transparent #394694 transparent;
+}
+
+/* Link-urile din tooltip */
+.tooltip-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.2s;
+}
+
+.tooltip-link:last-child {
+    border-bottom: none;
+}
+
+.tooltip-link:hover {
+    color: #8fa9fd;
+}
+
+.calendar-day.has-event:hover .event-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*  */
+
+.titlu-activitati h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.titlu-activitati {
+    background-color: white;
+    margin: -45px 20% 10px 20%;
+    padding: 1px 24px 0 24px;
+    position: relative;
+}
+
+.img-activitate {
+    max-width: 80%;
+}
+
+.img-collage-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.img-collage {
+    max-width: 45%;
+}
+
+.news-page .top-name {
+    margin-bottom: 8px;
+}
+
+.news-page .content p:first-of-type {
+    margin-top: 0;
+}
+
+/* Calendarul activitatii */
+
+[class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.row-flex {
+    overflow: hidden;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.calendarul-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.calendarul-artmartisor {
+    display: flex;
+    max-width: 16rem;
+    width: 100%;
+    height: auto;
+}
+
+.loupe-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.loupe-icon {
+    font-size: 2rem;
+    color: #394694;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.loupe-icon:hover {
+    background: #394694;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Responsive: știri, calendar, articole eveniment */
+
+@media screen and (max-width: 1366px) {
+    .stiri-h1 {
+        font-size: 1.9rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .stiri-h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .news-card {
+        min-height: 200px;
+        min-width: 200px;
+    }
+
+    .news-img {
+        height: 150px;
+    }
+
+    .news-title,
+    .calendar-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .announcement-title {
+        font-size: 1.25rem;
+    }
+
+    .announcement-text {
+        font-size: 1rem;
+    }
+
+    .news-announcement {
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .row-flex {
+        flex-direction: column;
+    }
+
+    .news-content>div {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .calendar-container {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .calendar-widget {
+        position: static;
+        min-width: unset;
+    }
+
+    .news-card {
+        max-width: 33.33%;
+    }
+
+    .stiri-h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    .news-title {
+        font-size: 1rem;
+    }
+
+    .news-img {
+        height: 140px;
+    }
+
+    .stiri-h1 {
+        font-size: 1.6rem;
+    }
+
+    .news-section {
+        column-gap: 2.75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titlu-activitati h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .news-card {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .news-section {
+        justify-content: center;
+    }
+
+    .news-card {
+        min-width: 88%;
+    }
+}

@@ -488,7 +488,7 @@ textarea::placeholder {
     }
 }
 
-/* Lățimi panel-uri doar la compartimentul Creație */
+/* Lățimi panel Creație */
 @media screen and (min-width: 1140px) {
     .compartiment-box--creatie .accordion-panel {
         flex-basis: 282px;
@@ -496,6 +496,22 @@ textarea::placeholder {
 
     .compartiment-box--creatie .accordion-panel:has([aria-expanded="true"]) {
         flex-basis: clamp(25vw, 33vh, 30rem);
+    }
+
+    .compartiment-box--creatie .accordion-title::after {
+        content: "";
+        position: absolute;
+        left: calc((var(--_panel-gap) + var(--_button-size)) * -1);
+        width: calc(100% + var(--_button-size) + (var(--_panel-gap) * 2));
+        height: var(--_button-size);
+        background: hsl(0 0% 0% / 0.5);
+        z-index: -1;
+        border-radius: 17px;
+        transition: 500ms;
+    }
+
+    .compartiment-box--creatie .accordion-panel:has([aria-expanded="true"]) .accordion-title::after {
+        opacity: 0;
     }
 }
 

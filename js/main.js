@@ -75,6 +75,67 @@ document.addEventListener("DOMContentLoaded", function () {
     const pageTitle = pageTitles[window.location.pathname.split('/').pop().split('.')[0]] || "Activitate";
     if (span) span.textContent = pageTitle;
 
+    // Hamburger Sidebar Menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (hamburgerBtn && sidebar && sidebarOverlay) {
+        function toggleSidebar() {
+            const isOpen = hamburgerBtn.classList.contains('active');
+            hamburgerBtn.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.classList.toggle('sidebar-open');
+            hamburgerBtn.setAttribute('aria-expanded', !isOpen);
+        }
+
+        function closeSidebar() {
+            hamburgerBtn.classList.remove('active');
+            sidebar.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        hamburgerBtn.addEventListener('click', toggleSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        const sidebarLinks = sidebar.querySelectorAll('.sidebar-item > a, .sidebar-submenu a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', closeSidebar);
+        });
+
+        // Submenu
+        const submenuToggles = sidebar.querySelectorAll('.submenu-toggle');
+        submenuToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const parentItem = this.closest('.sidebar-item');
+                const submenu = parentItem.querySelector('.sidebar-submenu');
+                const isActive = this.classList.contains('active');
+
+                submenuToggles.forEach(otherToggle => {
+                    if (otherToggle !== this) {
+                        otherToggle.classList.remove('active');
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                        const otherSubmenu = otherToggle.closest('.sidebar-item').querySelector('.sidebar-submenu');
+                        if (otherSubmenu) otherSubmenu.classList.remove('active');
+                    }
+                });
+
+                this.classList.toggle('active');
+                this.setAttribute('aria-expanded', !isActive);
+                if (submenu) submenu.classList.toggle('active');
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeSidebar();
+            }
+        });
+    }
+
     // Meniu mobil
     const list = document.querySelectorAll('.navList');
 

@@ -104,7 +104,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     padding: 1em 0 2em 0;
-    z-index: 1000;
+    z-index: 1100;
 }
 
 .main-header {
@@ -953,7 +953,7 @@ td {
     }
 }
 
-/* Clasa pentru accesibilitate (Screen Reader Only) */
+/* Screen Reader Only */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -966,9 +966,252 @@ td {
     border-width: 0;
 }
 
-/* Responsive: shell global */
+/* Hamburger Menu */
 
-@media screen and (min-width: 769px) {
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    flex-shrink: 0;
+}
+
+.hamburger:hover {
+    background: rgba(57, 70, 148, 0.08);
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background-color: rgb(57, 70, 148);
+    border-radius: 3px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* Sidebar Overlay */
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 25, 55, 0.45);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar Menu */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    max-width: 80vw;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.97);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 1050;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(28, 51, 111, 0.12);
+    overflow-y: auto;
+    display: none;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 20px 0 30px 0;
+    margin: 90px 0 0 0;
+    border-top: 1px solid rgba(57, 70, 148, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    border-bottom: 1px solid rgba(57, 70, 148, 0.08);
+}
+
+.sidebar-item>a,
+.sidebar-item-header a {
+    display: block;
+    padding: 16px 28px;
+    font-family: 'Nunito', 'Arial', 'Helvetica', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(28, 51, 111);
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.sidebar-item>a:hover,
+.sidebar-item-header a:hover {
+    background: rgba(143, 169, 253, 0.1);
+    color: rgb(57, 70, 148);
+}
+
+.sidebar-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-item-header a {
+    flex: 1;
+}
+
+.submenu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(57, 70, 148, 0.6);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-right: 8px;
+}
+
+.submenu-toggle:hover {
+    color: rgb(57, 70, 148);
+    background: rgba(143, 169, 253, 0.1);
+    border-radius: 50%;
+}
+
+.submenu-toggle i {
+    font-size: 0.85rem;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submenu-toggle.active i {
+    transform: rotate(180deg);
+}
+
+/* Sidebar Submenu */
+
+.sidebar-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(143, 169, 253, 0.05);
+}
+
+.sidebar-submenu.active {
+    max-height: 300px;
+}
+
+.sidebar-submenu li a {
+    display: block;
+    padding: 11px 28px 11px 44px;
+    font-family: 'Nunito', 'Arial', 'Helvetica', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(57, 70, 148, 0.85);
+    transition: background 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+    position: relative;
+}
+
+.sidebar-submenu li a::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(143, 169, 253, 0.6);
+    transition: background 0.25s ease;
+}
+
+.sidebar-submenu li a:hover {
+    background: rgba(143, 169, 253, 0.12);
+    color: rgb(28, 51, 111);
+    padding-left: 48px;
+}
+
+.sidebar-submenu li a:hover::before {
+    background: rgb(57, 70, 148);
+}
+
+/* Sidebar Contacte Button */
+
+.sidebar-contacte {
+    padding: 16px 28px;
+    border-bottom: none;
+    margin-top: 30px;
+}
+
+.sidebar-contacte a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px !important;
+    background: rgba(57, 70, 148, 0.7);
+    color: white !important;
+    border-radius: 109px;
+    font-weight: 700 !important;
+    transition: background 0.3s ease !important;
+}
+
+.sidebar-contacte a:hover {
+    background: rgb(44, 54, 110) !important;
+}
+
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* Global */
+
+@media screen and (min-width: 425px) {
     .navMenu {
         display: none;
     }
@@ -1086,29 +1329,32 @@ td {
         font-size: 2rem;
     }
 
-    .content hr {
-        top: 0;
-    }
-
-    header {
+    .nav-links {
         display: none;
     }
 
-    .content {
-        padding-top: 20px;
+    .contacte-btn {
+        display: none;
     }
 
-    footer {
-        padding: 30px 7.5% 105px;
+    .hamburger {
+        display: flex;
     }
 
-    #scrollTopBtn {
-        width: 40px;
-        height: 40px;
-        right: 2px;
-        bottom: 100px;
+    .sidebar {
+        display: block;
+    }
+
+    .main-header {
+        padding-right: 16px;
+    }
+
+    .home-menu {
+        padding: 0 22px 0 0;
+        margin: 0;
     }
 }
+
 
 @media screen and (max-width: 720px) {
     .top-name {
@@ -1131,7 +1377,30 @@ td {
 }
 
 @media screen and (max-width: 425px) {
+    header {
+        display: none;
+    }
+
+    .content {
+        padding-top: 34px;
+    }
+
+    .content hr {
+        top: 0;
+    }
+
+    footer {
+        padding: 30px 7.5% 105px;
+    }
+
     section {
         padding: 40px 8%;
+    }
+
+    #scrollTopBtn {
+        width: 40px;
+        height: 40px;
+        right: 2px;
+        bottom: 100px;
     }
 }

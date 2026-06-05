@@ -164,8 +164,68 @@
             <button class="contacte-btn">
                 <a href="contacte.html">Contacte</a>
             </button>
+
+            <button class="hamburger" id="hamburgerBtn" aria-label="Deschide meniul" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar" id="sidebar" aria-label="Meniu lateral">
+        <ul class="sidebar-links">
+            <li class="sidebar-item">
+                <a href="../index.html">Homepage</a>
+            </li>
+            <li class="sidebar-item has-submenu">
+                <div class="sidebar-item-header">
+                    <a href="despre.html">Despre noi</a>
+                    <button class="submenu-toggle" aria-label="Deschide submeniu Despre noi" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+                <ul class="sidebar-submenu">
+                    <li><a href="despre.html#istoric">Istoric</a></li>
+                    <li><a href="despre.html#viziunea">Viziunea & Misiunea Școlii</a></li>
+                    <li><a href="despre.html#cadre">Cadre didactice</a></li>
+                    <li><a href="despre.html#mandria">Mândria școlii</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+                <div class="sidebar-item-header">
+                    <a href="specializari.html">Specializări</a>
+                    <button class="submenu-toggle" aria-label="Deschide submeniu Specializări" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+                <ul class="sidebar-submenu">
+                    <li><a href="specializari.html#muzica">Muzică</a></li>
+                    <li><a href="specializari.html#creatie">Creație</a></li>
+                    <li><a href="specializari.html#curricula">Curricula</a></li>
+                    <li><a href="specializari.html#formular">Formular de înscriere</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item has-submenu">
+                <div class="sidebar-item-header">
+                    <a href="activitati.html">Activități</a>
+                    <button class="submenu-toggle" aria-label="Deschide submeniu Activități" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+                <ul class="sidebar-submenu">
+                    <li><a href="activitati.html">Prima pagină</a></li>
+                    <li><a class="activitati-last-page" href="activitati.html">Ultima pagină</a></li>
+                </ul>
+            </li>
+            <li class="sidebar-item sidebar-contacte">
+                <a href="contacte.html">Contacte</a>
+            </li>
+        </ul>
+    </nav>
+
 
     <main id="start">
 

@@ -201,10 +201,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     function toggleAccordion(panelToActivate) {
         const button = panelToActivate.querySelector('button');
-        const content = panelToActivate.querySelector('.accordion-content');
         const isExpanded = button.getAttribute('aria-expanded') === 'true';
-
         const parent = panelToActivate.parentElement;
+        const isFaq = parent.closest('.faq-wrapper') !== null;
+
+        if (!isFaq && isExpanded) {
+            return;
+        }
+
         const allPanels = parent.querySelectorAll('.accordion-panel');
 
         allPanels.forEach((panel) => {

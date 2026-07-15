@@ -286,22 +286,22 @@
                         <form class="contactare" method="POST" novalidate>
                             <h3 class="title">Contactează-ne</h3>
                             <div class="input-container">
-                                <label for="nume-contact" class="sr-only">Nume</label>
-                                <input id="nume-contact" type="text" name="name" class="input" placeholder="Nume"
+                                <label for="nume-contact">Nume</label>
+                                <input id="nume-contact" type="text" name="name" class="input"
                                     pattern="[A-Z][a-zA-Z]{2,}( [A-Z][a-zA-Z]{2,})?"
                                     title="Numele trebuie să înceapă cu majusculă și să aibă cel puțin 3 litere"
                                     required aria-describedby="nume-contact-error">
                                 <small id="nume-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <div class="input-container">
-                                <label for="email-contact" class="sr-only">E-mail</label>
-                                <input id="email-contact" type="email" name="email" class="input" placeholder="E-mail"
-                                    required aria-describedby="email-contact-error">
+                                <label for="email-contact">E-mail</label>
+                                <input id="email-contact" type="email" name="email" class="input" required
+                                    aria-describedby="email-contact-error">
                                 <small id="email-contact-error" class="error-message" aria-live="polite"></small>
                             </div>
                             <div class="input-container">
-                                <label for="telefon-contact" class="sr-only">Telefon</label>
-                                <input id="telefon-contact" type="tel" name="phone" class="input" placeholder="Telefon"
+                                <label for="telefon-contact">Telefon</label>
+                                <input id="telefon-contact" type="tel" name="phone" class="input"
                                     pattern="(\+373|0)\s?\d{2}\s?\d{3}\s?\d{3}"
                                     title="Format: +373 XXX XXXXX sau 0 XXX XXXXX" required
                                     aria-describedby="telefon-contact-error">
@@ -309,10 +309,9 @@
                             </div>
                             <div class="input-container textarea">
                                 <div class="textarea-wrapper">
-                                    <label for="mesaj-contact" class="sr-only">Mesajul dvs</label>
-                                    <textarea id="mesaj-contact" name="message" class="input" placeholder="Mesajul dvs"
-                                        maxlength="500" required oninput="checkLength(this)"
-                                        aria-describedby="mesaj-contact-error"></textarea>
+                                    <label for="mesaj-contact">Mesajul dvs</label>
+                                    <textarea id="mesaj-contact" name="message" class="input" maxlength="500" required
+                                        oninput="checkLength(this)" aria-describedby="mesaj-contact-error"></textarea>
                                     <small id="charCount">0 / 500</small>
                                 </div>
                                 <small id="mesaj-contact-error" class="error-message" aria-live="polite"></small>

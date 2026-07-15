@@ -119,13 +119,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         otherToggle.classList.remove('active');
                         otherToggle.setAttribute('aria-expanded', 'false');
                         const otherSubmenu = otherToggle.closest('.sidebar-item').querySelector('.sidebar-submenu');
-                        if (otherSubmenu) otherSubmenu.classList.remove('active');
+                        if (otherSubmenu) {
+                            otherSubmenu.classList.remove('active');
+                            otherSubmenu.style.maxHeight = null;
+                        }
                     }
                 });
 
                 this.classList.toggle('active');
                 this.setAttribute('aria-expanded', !isActive);
-                if (submenu) submenu.classList.toggle('active');
+                if (submenu) {
+                    submenu.classList.toggle('active');
+                    if (submenu.classList.contains('active')) {
+                        submenu.style.maxHeight = submenu.scrollHeight + "px";
+                    } else {
+                        submenu.style.maxHeight = null;
+                    }
+                }
             });
         });
 

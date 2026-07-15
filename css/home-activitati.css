@@ -494,26 +494,6 @@
 
 /*  */
 
-/* Reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.reveal.from-left {
-    transform: translateX(-28px);
-}
-
-.reveal.from-right {
-    transform: translateX(28px);
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-}
-
 /* Responsive: specializări pe index */
 
 @media screen and (max-width: 1280px) {
